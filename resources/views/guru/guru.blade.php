@@ -1,1 +1,0 @@
-<b>Ini halaman guru</b>

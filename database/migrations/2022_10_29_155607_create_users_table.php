@@ -25,6 +25,7 @@ return new class extends Migration
             $table->string('nisn')->uniqid();
             $table->string('password');
             $table->bigInteger('phone_number');
+            $table->string('status')->default('not active');
             $table->timestamps();
         });
 
@@ -37,6 +38,7 @@ return new class extends Migration
                 'nisn' => mt_rand(100000000000, 999999999999),
                 'password' => bcrypt('admin'),
                 'phone_number' => '08963424332',
+                'status' => 'active'
             ],
             [
                 'level_id' => 2,
@@ -46,6 +48,7 @@ return new class extends Migration
                 'nisn' => mt_rand(100000000000, 999999999999),
                 'password' => bcrypt('guru'),
                 'phone_number' => '08963414338',
+                'status' => 'active'
             ],
             [
                 'level_id' => 3,
@@ -55,6 +58,7 @@ return new class extends Migration
                 'nisn' => mt_rand(100000000000, 999999999999),
                 'password' => bcrypt('siswa'),
                 'phone_number' => '08963624335',
+                'status' => 'active'
             ]
         ]);
     }

@@ -52,6 +52,14 @@
                     <div class="input-group-prepend">
                       <span class="input-group-text"><i class="ni ni-single-02"></i></span>
                     </div>
+                    <input class="form-control" id="username" name="username" placeholder="Username" type="text">
+                  </div>
+                </div>
+                <div class="form-group mb-3">
+                  <div class="input-group input-group-alternative">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="ni ni-single-02"></i></span>
+                    </div>
                     <input class="form-control" id="name" name="name" placeholder="Name" type="text">
                   </div>
                 </div>
@@ -68,9 +76,9 @@
                     <div class="input-group-prepend">
                       <span class="input-group-text"><i class="ni ni-settings-gear-65"></i></span>
                     </div>
-                    <select class="form-control" id="role_id" name="role_id" placeholder="Role">
-                        @foreach($roles as $role)
-                            <option value="{{ $role->id }}">{{ $role->role_name }}</option>
+                    <select class="form-control" id="level_id" name="level_id" placeholder="Level">
+                        @foreach($levels as $level)
+                            <option value="{{ $level->id }}">{{ $level->nm_level }}</option>
                         @endforeach
                     </select>
                   </div>
@@ -81,6 +89,14 @@
                       <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
                     </div>
                     <input class="form-control" placeholder="Password" name="password" id="password" type="password">
+                  </div>
+                </div>
+                <div class="form-group focused">
+                  <div class="input-group input-group-alternative">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="ni ni-mobile-button"></i></span>
+                    </div>
+                    <input class="form-control" placeholder="Phone Number" name="phone_number" id="phone_number" type="number" min="0">
                   </div>
                 </div>
                 <div class="custom-control custom-control-alternative custom-checkbox">
