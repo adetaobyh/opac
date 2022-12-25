@@ -20,7 +20,7 @@
                             </a>
                         </div>
                         <div class="card-body">
-                            <table class="table table-bordered">
+                            <table class="table table-hover">
                                 <thead>
                                     <tr>
                                         <th scope="col">No.</th>
@@ -37,13 +37,15 @@
                                     @foreach ($dtBook as $book)
                                     <tr>
                                         <td>{{ $dtBook->firstItem()+$loop->index }}</td>
-                                        <td>{{ $book->catalog->nm_catalog }}</td>
-                                        <td>{!! Str::limit($book->nm_catalog, 20) !!}</td>
-                                        <td width="10%">
+                                        <td>{{ $book->catalogs->nm_catalog }}</td>
+                                        <td>{{ $book->bk_title }}</td>
+                                        <td>{{ $book->bk_date }}</td>
+                                        <td>{{ $book->bk_writer }}</td>
+                                        <td>{!! Str::limit($book->synopsis, 20) !!}</td>
+                                        <td>{{ $book->publisher }}</td>
+                                        <td width="10%" colspan="2">
                                             <a href="{{ route('edit-book', $book->id) }}" class="btn btn-success btn-icon btn-sm" type="button">
-                                                <i class="fas fa-pen"></i></a>
-                                        </td>
-                                        <td width="10%">
+                                                <i class="fas fa-pen"></i></a> | 
                                             <a href="{{ route('hapus-book', $book->id) }}" class="btn btn-danger btn-icon btn-sm delete-confirm" type="button">
                                                 <i class="fas fa-minus"></i></a>
                                         </td>

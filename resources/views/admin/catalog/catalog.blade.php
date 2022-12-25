@@ -20,7 +20,7 @@
                             </a>
                         </div>
                         <div class="card-body">
-                            <table class="table table-bordered">
+                            <table class="table table-hover">
                                 <thead>
                                     <tr>
                                         <th scope="col">No.</th>
@@ -35,11 +35,9 @@
                                         <td>{{ $dtCatalog->firstItem()+$loop->index }}</td>
                                         <td>{{ $ctlg->kd_catalog }}</td>
                                         <td>{{ $ctlg->nm_catalog }}</td>
-                                        <td width="10%">
+                                        <td width="10%" colspan="2">
                                             <a href="{{ route('edit-catalog', $ctlg->id) }}" class="btn btn-success btn-icon btn-sm" type="button">
-                                                <i class="fas fa-pen"></i></a>
-                                        </td>
-                                        <td width="10%">
+                                                <i class="fas fa-pen"></i></a> | 
                                             <a href="{{ route('hapus-catalog', $ctlg->id) }}" class="btn btn-danger btn-icon btn-sm delete-confirm" type="button">
                                                 <i class="fas fa-minus"></i></a>
                                         </td>

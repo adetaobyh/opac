@@ -79,7 +79,7 @@ class CatalogController extends Controller
     public function update(Request $request, $id)
     {
         $dtCatalog = Catalog::findOrFail($id);
-        $dtCatalog = Catalog::update([
+        $dtCatalog->update([
             'kd_catalog' => $request->kd_catalog,
             'nm_catalog' => $request->nm_catalog
         ]);

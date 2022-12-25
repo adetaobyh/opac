@@ -18,7 +18,7 @@ class BookController extends Controller
     public function index()
     {
         $dtBook = Book::simplePaginate(5);
-        return view('admin.book.book', compact('dtCatalog'));
+        return view('admin.book.book', compact('dtBook'));
     }
 
     /**
@@ -84,7 +84,7 @@ class BookController extends Controller
     public function update(Request $request, $id)
     {
         $dtBook = Book::findOrFail($id);
-        $dtBook = Book::update([
+        $dtBook->update([
             'catalogs_id' => $request->catalogs_id,
             'bk_title' => $request->bk_title,
             'bk_date' => $request->bk_date,
