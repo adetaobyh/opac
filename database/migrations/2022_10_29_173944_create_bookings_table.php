@@ -25,6 +25,7 @@ return new class extends Migration
                 ->onDelete('cascade');
             $table->date('booking_start');
             $table->date('booking_end');
+            $table->date('extend_book')->null();
             $table->string('booking_number')->uniqid();
             $table->string('status')->default('Belum Disetujui');
             $table->timestamps();

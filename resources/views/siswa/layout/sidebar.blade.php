@@ -13,8 +13,8 @@
 <hr class="sidebar-divider my-0">
 
 <!-- Nav Item - Dashboard -->
-<li class="nav-item {{ (Request::is('admin') || Request::is('admin/*') ? 'active open' : '') }}">
-    <a class="nav-link" href="{{ route('admin') }}">
+<li class="nav-item {{ (Request::is('siswa') || Request::is('siswa/*') ? 'active open' : '') }}">
+    <a class="nav-link" href="{{ route('siswa') }}">
         <i class="fa-solid fa-gauge"></i>
         <span>Dashboard</span>
     </a>

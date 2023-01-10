@@ -75,13 +75,6 @@ class DtUserController extends Controller
     {
         $dtUser = User::findOrfail($id);
         $dtUser->update([
-            'level_id' => $request->level_id,
-            'username' => $request->username,
-            'name' => $request->name,
-            'email' => $request->email,
-            'nisn' => $request->nisn,
-            'email' => $request->email,
-            'phone_number' => $request->phone_number,
             'status' => $request->status
         ]);
         return redirect('user');

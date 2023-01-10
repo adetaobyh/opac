@@ -47,16 +47,6 @@ return new class extends Migration
                 'password' => bcrypt('guru'),
                 'phone_number' => '08963414338',
                 'status' => 'active'
-            ],
-            [
-                'level_id' => 3,
-                'username' => 'Siswa',
-                'name' => 'Ade Taoby Hidayat',
-                'email' => 'siswa@siswa.com',
-                'nisn' => mt_rand(100000000000, 999999999999),
-                'password' => bcrypt('siswa'),
-                'phone_number' => '08963624335',
-                'status' => 'active'
             ]
         ]);
     }

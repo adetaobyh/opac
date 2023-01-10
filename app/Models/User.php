@@ -28,6 +28,7 @@ class User extends Authenticatable
         'email',
         'nisn',
         'password',
+        'status',
         'phone_number'
     ];
 

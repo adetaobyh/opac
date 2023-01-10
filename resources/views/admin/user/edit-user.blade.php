@@ -22,10 +22,14 @@
                         <div class="card-body">
                         <form action="{{ route('update-user',$dtUser->id) }}" method="post" enctype="multipart/form-data">
                             {{ csrf_field()}}
-                            <div class="form-group">
+                            <!-- <div class="form-group">
                                 <label for="level_id" class="form-label">Level User</label>
                                 <input type="text" id="level_id" name="level_id" class="form-control" value="{{ $dtUser->levels->nm_level }}" disabled>
-                            </div>
+                            </div> -->
+                            <!-- <div class="form-group">
+                                <label for="username" class="form-label">Username</label>
+                                <input type="text" id="username" name="username" class="form-control" value="{{ $dtUser->username }}" disabled>
+                            </div> -->
                             <div class="form-group">
                                 <label for="name" class="form-label">Nama</label>
                                 <input type="text" id="name" name="name" class="form-control" value="{{ $dtUser->name }}" disabled>
