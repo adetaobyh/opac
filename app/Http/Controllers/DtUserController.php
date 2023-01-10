@@ -3,12 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Str;
 use Auth;
-use App\Models\Book;
-use App\Models\Catalog;
+use App\Models\User;
+use App\Models\Level;
 
-class BookController extends Controller
+class DtUserController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,8 +16,8 @@ class BookController extends Controller
      */
     public function index()
     {
-        $dtBook = Book::simplePaginate(5);
-        return view('admin.book.book', compact('dtBook'));
+        $dtUser = User::simplePaginate(5);
+        return view('admin.user.user', compact('dtUser'));
     }
 
     /**
@@ -28,8 +27,7 @@ class BookController extends Controller
      */
     public function create()
     {
-        $dtCatalog = Catalog::all();
-        return view('admin.book.tambah-book', compact('dtCatalog'));
+        //
     }
 
     /**
@@ -40,15 +38,7 @@ class BookController extends Controller
      */
     public function store(Request $request)
     {
-        $dtBook = Book::create([
-            'catalogs_id' => $request->catalogs_id,
-            'bk_title' => $request->bk_title,
-            'bk_date' => $request->bk_date,
-            'bk_writer' => $request->bk_writer,
-            'synopsis' => $request->synopsis,
-            'publisher' => $request->publisher
-        ]);
-        return redirect('book');
+        //
     }
 
     /**
@@ -70,9 +60,8 @@ class BookController extends Controller
      */
     public function edit($id)
     {
-        $dtCatalog = Catalog::all();
-        $dtBook = Book::findOrFail($id);
-        return view('admin.book.edit-book', compact('dtCatalog', 'dtBook'));
+        $dtUser = User::findOrfail($id);
+        return view('admin.user.edit-user', compact('dtUser'));
     }
 
     /**
@@ -84,16 +73,18 @@ class BookController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $dtBook = Book::findOrFail($id);
-        $dtBook->update([
-            'catalogs_id' => $request->catalogs_id,
-            'bk_title' => $request->bk_title,
-            'bk_date' => $request->bk_date,
-            'bk_writer' => $request->bk_writer,
-            'synopsis' => $request->synopsis,
-            'publisher' => $request->publisher
+        $dtUser = User::findOrfail($id);
+        $dtUser->update([
+            'level_id' => $request->level_id,
+            'username' => $request->username,
+            'name' => $request->name,
+            'email' => $request->email,
+            'nisn' => $request->nisn,
+            'email' => $request->email,
+            'phone_number' => $request->phone_number,
+            'status' => $request->status
         ]);
-        return redirect('book');
+        return redirect('user');
     }
 
     /**
@@ -104,8 +95,6 @@ class BookController extends Controller
      */
     public function destroy($id)
     {
-        $dtBook = Book::findOrFail($id);
-        $dtBook->delete();
-        return redirect('book');
+        //
     }
 }

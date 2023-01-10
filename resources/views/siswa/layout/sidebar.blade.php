@@ -6,7 +6,7 @@
     <div class="sidebar-brand-icon">
         <i class="fa-solid fa-book-open"></i>
     </div>
-    <div class="sidebar-brand-text mx-3">Admin</div>
+    <div class="sidebar-brand-text mx-3">Opac SMKN 2 Kab. Tangerang</div>
 </a>
 
 <!-- Divider -->
@@ -33,20 +33,6 @@
     <a class="nav-link" href="#">
         <i class="fa-solid fa-receipt"></i>
         <span>Booking</span>
-    </a>
-</li>
-
-<li class="nav-item {{ (Request::is('catalog') || Request::is('catalog/*') ? 'active open' : '') }}">
-    <a class="nav-link" href="{{ route('catalog') }}">
-        <i class="fa-solid fa-table-list"></i>
-        <span>Kategori</span>
-    </a>
-</li>
-
-<li class="nav-item {{ (Request::is('user') || Request::is('user/*') ? 'active open' : '') }}">
-    <a class="nav-link" href="{{ route('user') }}">
-        <i class="fa-solid fa-user"></i>
-        <span>User</span>
     </a>
 </li>
 

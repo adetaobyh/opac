@@ -4,11 +4,12 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
 
 class Level extends Model
 {
     use HasFactory;
-    protected $table = "level";
+    protected $table = "levels";
     protected $primaryKey = "id";
     protected $fillable = [
         'kd_level',

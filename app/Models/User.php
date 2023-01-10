@@ -5,6 +5,8 @@ namespace App\Models;
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 
@@ -17,6 +19,8 @@ class User extends Authenticatable
      *
      * @var array<int, string>
      */
+    protected $table = "users";
+    protected $primaryKey = "id";
     protected $fillable = [
         'level_id',
         'username',
@@ -28,7 +32,7 @@ class User extends Authenticatable
     ];
 
     public function levels(){
-        return $this->belongsTo(Level::class);
+        return $this->belongsTo(Level::class, 'level_id');
     }
 
     public function bookings(){

@@ -3,11 +3,16 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
+
+// Admin
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CatalogController;
 use App\Http\Controllers\BookController;
 use App\Http\Controllers\PengawasController;
 use App\Http\Controllers\SiswaController;
+use App\Http\Controllers\DtUserController;
+
+// Users
 
 /*
 |--------------------------------------------------------------------------
@@ -48,6 +53,13 @@ Route::get('/edit-book/{id}', [BookController::class, 'edit'])->name('edit-book'
 Route::post('/update-book/{id}', [BookController::class, 'update'])->name('update-book');
 Route::get('/hapus-book/{id}', [BookController::class, 'destroy'])->name('hapus-book');
 
+// CRUD User
+Route::get('/user', [DtUserController::class, 'index'])->name('user');
+Route::get('/tambah-user', [DtUserController::class, 'create'])->name('tambah-user');
+Route::post('/simpan-user', [DtUserController::class, 'store'])->name('simpan-user');
+Route::get('/edit-user/{id}', [DtUserController::class, 'edit'])->name('edit-user');
+Route::post('/update-user/{id}', [DtUserController::class, 'update'])->name('update-user');
+Route::get('/hapus-user/{id}', [DtUserController::class, 'destroy'])->name('hapus-user');
 
 
 // Pengawas
