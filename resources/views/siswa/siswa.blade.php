@@ -17,14 +17,17 @@
                         @foreach ($dtBook as $book)
                         <div class="col-sm-6 mb-3 mb-sm-4">
                             <div class="card shadow mb-4">
+                            <div class="card-header">
+                                <h5 class="card-text">{{ $book->bk_title }}</h5>
+                            </div>
                             <div class="card-body">
-                                <b><h5 class="card-title">{{ $book->bk_title }}</h5></b>
                                 <p class="card-text">Penulis : {!! $book->bk_writer !!}</p>
                                 <p class="card-text">{!! Str::limit($book->synopsis, 250) !!}</p>
                                 <p class="card-text">Penerbit : {!! $book->publisher !!}</p>
-                                <span class="badge text-white bg-success mb-2">Tersedia</span>
-                                <br>
-                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                                <span class="badge text-white bg-success">Tersedia</span>
+                            </div>
+                            <div class="card-footer">
+                                <a href="#" class="btn btn-primary btn-sm">Lihat Buku</a>
                             </div>
                             </div>
                         </div>
