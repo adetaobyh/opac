@@ -12,7 +12,7 @@ use App\Models\User;
 class SiswaController extends Controller
 {
     public function index(){
-        $dtBook = Book::all();
+        $dtBook = Book::orderBy('id', 'desc')->paginate(5);
         return view('siswa.siswa', compact('dtBook'));
     }
 }
