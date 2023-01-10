@@ -27,7 +27,7 @@
                                 <span class="badge text-white bg-success">Tersedia</span>
                             </div>
                             <div class="card-footer">
-                                <a href="#" class="btn btn-primary btn-sm">Lihat Buku</a>
+                                <a href="{{ url('detail', $book->slug) }}" class="btn btn-success btn-sm">Lihat Buku</a>
                             </div>
                             </div>
                         </div>

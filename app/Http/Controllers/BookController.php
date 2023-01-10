@@ -43,6 +43,7 @@ class BookController extends Controller
         $dtBook = Book::create([
             'catalogs_id' => $request->catalogs_id,
             'bk_title' => $request->bk_title,
+            'slug' => Str::slug($request->get('bk_title')),
             'bk_date' => $request->bk_date,
             'bk_writer' => $request->bk_writer,
             'synopsis' => $request->synopsis,

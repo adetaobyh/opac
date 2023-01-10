@@ -78,5 +78,6 @@ Route::middleware(['auth', 'siswa', 'revalidate'])->group(function () {
     
     // Siswa
     Route::get('/siswa', [SiswaController::class, 'index'])->name('siswa');
+    Route::get('/siswa/detail/{slug}', [SiswaController::class, 'detail']);
 });
 

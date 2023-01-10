@@ -20,6 +20,7 @@ return new class extends Migration
                 ->onUpdate('cascade')
                 ->onDelete('cascade');
             $table->string('bk_title');
+            $table->string('slug');
             $table->string('bk_date');
             $table->string('bk_writer');
             $table->string('synopsis');
