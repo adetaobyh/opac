@@ -20,10 +20,10 @@
                         <div class="card-body">
                             <form class="form row" method="get" action="{{ route('search') }}">
                                 <div class="col">
-                                    <input type="text" class="form-control" id="search" placeholder="Masukkan Pencarian">
+                                    <input type="text" name="view" class="form-control" id="view" placeholder="Masukkan Pencarian">
                                 </div>
                                 <div class="col-auto">
-                                    <button type="submit" class="btn btn-primary mb-3">Cari</button>
+                                    <input type="submit" class="btn btn-primary mb-3"></input>
                                 </div>
                             </form>
                         </div>

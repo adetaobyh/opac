@@ -20,7 +20,6 @@ class SiswaController extends Controller
     public function detail($slug)
     {
         $detail = Book::where('slug', $slug)->first();
-        //dd($detail);
         return view('siswa.detail', compact('detail'));
     }
 }

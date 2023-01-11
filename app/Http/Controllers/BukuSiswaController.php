@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 use Auth;
 use App\Models\Book;
 use App\Models\Catalog;
@@ -21,12 +22,18 @@ class BukuSiswaController extends Controller
 
     public function search(Request $request)
     {
-        $search = $request->search;
-        $dtBook = Book::where('bk_title', 'like', "%" . $search . "%")
-                    ->where('bk_writer', 'like', "%" . $search . "%")
+        $view = $request->view;
+        $dtResult = Book::where('bk_title', 'like', "%" . $view . "%")
+                    ->orWhere('bk_writer', 'like', "%" . $view . "%")
+                    ->orWhere('publisher', 'like', "%" . $view . "%")
                     ->simplePaginate(4);
-        return view('siswa.book.result', compact('dtBook'))->with('i', (request()
-                    ->input('page', 1) - 1) * 5);
+        return view('siswa.book.result', compact('dtResult'));
+    }
+
+    public function detail($slug)
+    {
+        $detail = Book::where('slug', $slug)->first();
+        return view('siswa.book.detail', compact('detail'));
     }
 
     /**

@@ -84,5 +84,6 @@ Route::middleware(['auth', 'siswa', 'revalidate'])->group(function () {
     // Siswa Book
     Route::get('/buku', [BukuSiswaController::class, 'index'])->name('buku');
     Route::get('/cari-buku', [BukuSiswaController::class, 'search'])->name('search');
+    Route::get('/detail/{slug}', [BukuSiswaController::class, 'detail']);
 });
 
