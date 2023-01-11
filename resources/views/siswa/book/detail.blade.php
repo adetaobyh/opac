@@ -21,7 +21,7 @@
                             <p class="card-text">Penulis : {!! $detail->bk_writer !!}</p>
                             <p class="card-text">{!! Str::limit($detail->synopsis, 250) !!}</p>
                             <p class="card-text">Penerbit : {!! $detail->publisher !!}</p>
-                            <!-- <span class="badge text-white bg-success">Tersedia</span> -->
+                            <span class="badge text-white bg-success">Tersedia</span>
                         </div>
                         <div class="card-footer">
                             <a href="#" class="btn btn-success btn-sm">Booking</a>
