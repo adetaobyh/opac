@@ -23,6 +23,9 @@
                             <p class="card-text">Penerbit : {!! $detail->publisher !!}</p>
                             <!-- <span class="badge text-white bg-success">Tersedia</span> -->
                         </div>
+                        <div class="card-footer">
+                            <a href="#" class="btn btn-success btn-sm">Booking</a>
+                        </div>
                     </div>
 
                     <!-- Content Row -->

@@ -36,7 +36,7 @@ class RegisterController extends Controller
             'nisn' => mt_rand(100000000000, 999999999999),
             'password' => bcrypt($request->password),
             'phone_number' => $request->phone_number,
-            'level_id' => $request->level_id,
+            'level_id' => 3,
         ]);
         return redirect('login');
     }

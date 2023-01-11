@@ -27,6 +27,7 @@ return new class extends Migration
             $table->date('booking_end');
             $table->date('extend_book')->null();
             $table->string('booking_number')->uniqid();
+            $table->string('slug');
             $table->string('status')->default('Belum Disetujui');
             $table->timestamps();
         });

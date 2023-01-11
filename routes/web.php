@@ -9,10 +9,11 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CatalogController;
 use App\Http\Controllers\BookController;
 use App\Http\Controllers\PengawasController;
-use App\Http\Controllers\SiswaController;
 use App\Http\Controllers\DtUserController;
 
 // Users
+use App\Http\Controllers\SiswaController;
+use App\Http\Controllers\BukuSiswaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -76,8 +77,12 @@ Route::middleware(['auth', 'guru', 'revalidate'])->group(function () {
 
 Route::middleware(['auth', 'siswa', 'revalidate'])->group(function () {
     
-    // Siswa
+    // Siswa Dashboard
     Route::get('/siswa', [SiswaController::class, 'index'])->name('siswa');
     Route::get('/detail/{slug}', [SiswaController::class, 'detail']);
+
+    // Siswa Book
+    Route::get('/buku', [BukuSiswaController::class, 'index'])->name('buku');
+    Route::get('/cari-buku', [BukuSiswaController::class, 'search'])->name('search');
 });
 

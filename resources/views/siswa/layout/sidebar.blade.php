@@ -22,8 +22,8 @@
 
 <hr class="sidebar-divider my-0">
 
-<li class="nav-item {{ (Request::is('book') || Request::is('book/*') ? 'active open' : '') }}">
-    <a class="nav-link" href="{{ route('book') }}">
+<li class="nav-item {{ (Request::is('buku') || Request::is('buku/*') ? 'active open' : '') }}">
+    <a class="nav-link" href="{{ route('buku') }}">
         <i class="fa-solid fa-book"></i>
         <span>Buku</span>
     </a>
