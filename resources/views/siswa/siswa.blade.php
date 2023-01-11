@@ -33,7 +33,11 @@
                         </div>
                         @endforeach
                     </div>
-                    {{ $dtBook->links() }}
+
+                    <!-- Paginate -->
+                    <div class="d-flex justify-content-center">
+                        {{ $dtBook->links() }}
+                    </div>
 
                     <!-- Content Row -->
 
