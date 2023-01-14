@@ -24,6 +24,16 @@ class BookingController extends Controller
         return view('admin.booking.booking', compact('dtUser', 'dtBook', 'dtBooking'));
     }
 
+    public function search(Request $request)
+    {
+        $view = $request->view;
+        $dtBooking = Booking::join('books', 'books.id', '=', 'bookings.books_id')
+                    ->where('books.bk_title', 'like', "%" . $view . "%")
+                    ->orWhere('booking_number', 'like', "%" . $view . "%")
+                    ->simplePaginate(5);
+        return view('admin.booking.booking', compact('dtBooking'));
+    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -64,7 +74,9 @@ class BookingController extends Controller
      */
     public function edit($id)
     {
-        //
+        $dtBook = Book::all();
+        $dtBooking = Booking::findOrFail($id);
+        return view('admin.booking.edit-booking', compact('dtBook', 'dtBooking'));
     }
 
     /**
@@ -76,7 +88,11 @@ class BookingController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $dtBooking = Booking::findOrFail($id);
+        $dtBooking->update([
+            'stats' => $request->stats
+        ]);
+        return redirect('booking');
     }
 
     /**

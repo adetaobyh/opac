@@ -51,10 +51,19 @@
                                         <td>{{ $booking->extend_book }}</td>
                                         <td>{{ $booking->booking_number }}</td>
                                         <td>{{ $booking->stats }}</td>
+                                        @if($booking->stats == "Berakhir")
+                                        <td width="10%" colspan="2">
+                                            <button class="btn btn-success btn-icon btn-sm" type="submit" disabled>
+                                                <i class="fas fa-pen"></i>
+                                            </button>
+                                        </td>
+                                        @else
                                         <td width="10%" colspan="2">
                                             <a href="{{ route('edit-booking-siswa', $booking->id) }}" class="btn btn-success btn-icon btn-sm" type="button">
-                                                <i class="fas fa-pen"></i></a>
+                                                <i class="fas fa-pen"></i>
+                                            </a>
                                         </td>
+                                        @endif
                                     </tr>
                                     @endforeach
                                 </tbody>
