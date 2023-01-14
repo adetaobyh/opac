@@ -33,7 +33,7 @@ class BukuSiswaController extends Controller
     public function detail($slug)
     {
         $detail = Book::where('slug', $slug)->first();
-        return view('siswa.book.detail', compact('detail'));
+        return view('siswa.detail', compact('detail'));
     }
 
     /**

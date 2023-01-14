@@ -20,6 +20,19 @@
                             </a> -->
                         </div>
                         <div class="card-body">
+                            <form class="form row" method="get" action="{{ route('search-user-admin') }}">
+                                <div class="col">
+                                    <input type="text" name="view" class="form-control" id="view" placeholder="Masukkan Pencarian">
+                                </div>
+                                <div class="col-auto">
+                                    <button type="submit" class="btn btn-primary mb-3">Cari</button>
+                                </div>
+                                <div class="col-auto">
+                                    <a href="{{ route('user') }}" class="btn btn-danger btn-icon-split" type="button">
+                                        <span class="text">Kembali</span>
+                                    </a>
+                                </div>
+                            </form>
                             <table class="table table-hover">
                                 <thead>
                                     <tr>

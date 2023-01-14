@@ -25,7 +25,7 @@ return new class extends Migration
             $table->string('bk_writer');
             $table->string('synopsis');
             $table->string('publisher');
-            $table->string('status')->default('tersedia');
+            $table->string('status');
             $table->timestamps();
         });
     }

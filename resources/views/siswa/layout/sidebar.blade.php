@@ -29,8 +29,8 @@
     </a>
 </li>
 
-<li class="nav-item">
-    <a class="nav-link" href="#">
+<li class="nav-item {{ (Request::is('booking-siswa') || Request::is('booking-siswa/*') ? 'active open' : '') }}">
+    <a class="nav-link" href="{{ route('booking-siswa') }}">
         <i class="fa-solid fa-receipt"></i>
         <span>Booking</span>
     </a>

@@ -29,8 +29,8 @@
     </a>
 </li>
 
-<li class="nav-item">
-    <a class="nav-link" href="#">
+<li class="nav-item {{ (Request::is('booking') || Request::is('booking/*') ? 'active open' : '') }}">
+    <a class="nav-link" href="{{ route('booking') }}">
         <i class="fa-solid fa-receipt"></i>
         <span>Booking</span>
     </a>

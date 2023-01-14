@@ -21,6 +21,15 @@ class CatalogController extends Controller
         return view('admin.catalog.catalog', compact('dtCatalog'));
     }
 
+    public function search(Request $request)
+    {
+        $view = $request->view;
+        $dtCatalog = Catalog::where('kd_catalog', 'like', "%" . $view . "%")
+                    ->orWhere('nm_catalog', 'like', "%" . $view . "%")
+                    ->simplePaginate(5);
+        return view('admin.catalog.catalog', compact('dtCatalog'));
+    }
+
     /**
      * Show the form for creating a new resource.
      *

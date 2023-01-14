@@ -23,7 +23,7 @@
                                     <input type="text" name="view" class="form-control" id="view" placeholder="Masukkan Pencarian">
                                 </div>
                                 <div class="col-auto">
-                                    <input type="submit" class="btn btn-primary mb-3"></input>
+                                    <button type="submit" class="btn btn-primary mb-3">Cari</button>
                                 </div>
                             </form>
                         </div>

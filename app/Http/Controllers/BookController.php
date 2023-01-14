@@ -21,6 +21,16 @@ class BookController extends Controller
         return view('admin.book.book', compact('dtBook'));
     }
 
+    public function search(Request $request)
+    {
+        $view = $request->view;
+        $dtBook = Book::where('bk_title', 'like', "%" . $view . "%")
+                    ->orWhere('bk_writer', 'like', "%" . $view . "%")
+                    ->orWhere('publisher', 'like', "%" . $view . "%")
+                    ->simplePaginate(5);
+        return view('admin.book.book', compact('dtBook'));
+    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -47,7 +57,8 @@ class BookController extends Controller
             'bk_date' => $request->bk_date,
             'bk_writer' => $request->bk_writer,
             'synopsis' => $request->synopsis,
-            'publisher' => $request->publisher
+            'publisher' => $request->publisher,
+            'status' => $request->status
         ]);
         return redirect('book');
     }
@@ -92,7 +103,8 @@ class BookController extends Controller
             'bk_date' => $request->bk_date,
             'bk_writer' => $request->bk_writer,
             'synopsis' => $request->synopsis,
-            'publisher' => $request->publisher
+            'publisher' => $request->publisher,
+            'status' => $request->status
         ]);
         return redirect('book');
     }

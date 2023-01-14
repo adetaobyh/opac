@@ -4,10 +4,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Auth;
-use App\Models\User;
-use App\Models\Level;
+use App\Models\Booking;
+use App\Models\Book;
+use App\Models\user;
 
-class DtUserController extends Controller
+class BookingController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,18 +17,10 @@ class DtUserController extends Controller
      */
     public function index()
     {
-        $dtUser = User::simplePaginate(5);
-        return view('admin.user.user', compact('dtUser'));
-    }
-
-    public function search(Request $request)
-    {
-        $view = $request->view;
-        $dtUser = User::where('name', 'like', "%" . $view . "%")
-                    ->orWhere('email', 'like', "%" . $view . "%")
-                    ->orWhere('nisn', 'like', "%" . $view . "%")
-                    ->simplePaginate(5);
-        return view('admin.user.user', compact('dtUser'));
+        $dtUser = User::all();
+        $dtBook = Book::all();
+        $dtBooking = Booking::simplePaginate(5);
+        return view('admin.booking.booking', compact('dtUser', 'dtBook', 'dtBooking'));
     }
 
     /**
@@ -70,8 +63,7 @@ class DtUserController extends Controller
      */
     public function edit($id)
     {
-        $dtUser = User::findOrfail($id);
-        return view('admin.user.edit-user', compact('dtUser'));
+        //
     }
 
     /**
@@ -83,11 +75,7 @@ class DtUserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $dtUser = User::findOrfail($id);
-        $dtUser->update([
-            'status' => $request->status
-        ]);
-        return redirect('user');
+        //
     }
 
     /**

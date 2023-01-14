@@ -24,7 +24,11 @@
                                 <p class="card-text">Penulis : {!! $book->bk_writer !!}</p>
                                 <p class="card-text">{!! Str::limit($book->synopsis, 250) !!}</p>
                                 <p class="card-text">Penerbit : {!! $book->publisher !!}</p>
-                                <span class="badge text-white bg-success">Tersedia</span>
+                                @if($book->status == 'Tersedia')
+                                <span class="badge text-white bg-success">{{ $book->status }}</span>
+                                @else
+                                <span class="badge text-white bg-danger">Kosong</span>
+                                @endif
                             </div>
                             <div class="card-footer">
                                 <a href="{{ url('detail', $book->slug) }}" class="btn btn-success btn-sm">Lihat Buku</a>

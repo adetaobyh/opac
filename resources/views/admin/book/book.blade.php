@@ -20,16 +20,30 @@
                             </a>
                         </div>
                         <div class="card-body">
+                            <form class="form row" method="get" action="{{ route('search-book-admin') }}">
+                                <div class="col">
+                                    <input type="text" name="view" class="form-control" id="view" placeholder="Masukkan Pencarian">
+                                </div>
+                                <div class="col-auto">
+                                    <button type="submit" class="btn btn-primary mb-3">Cari</button>
+                                </div>
+                                <div class="col-auto">
+                                    <a href="{{ route('book') }}" class="btn btn-danger btn-icon-split" type="button">
+                                        <span class="text">Kembali</span>
+                                    </a>
+                                </div>
+                            </form>
                             <table class="table table-hover">
                                 <thead>
                                     <tr>
                                         <th scope="col">No.</th>
-                                        <th scope="col">Kategori Buku</th>
-                                        <th scope="col">Judul Buku</th>
+                                        <th scope="col">Kategori</th>
+                                        <th scope="col">Judul</th>
                                         <th scope="col">Tahun Terbit</th>
-                                        <th scope="col">Penulis Buku</th>
-                                        <th scope="col">Sinopsis Buku</th>
-                                        <th scope="col">Penerbit Buku</th>
+                                        <th scope="col">Penulis</th>
+                                        <th scope="col">Sinopsis</th>
+                                        <th scope="col">Penerbit</th>
+                                        <th scope="col">Ketersediaan</th>
                                         <th scope="col" colspan="2">Aksi</th>
                                     </tr>
                                 </thead>
@@ -43,9 +57,10 @@
                                         <td>{{ $book->bk_writer }}</td>
                                         <td>{!! Str::limit($book->synopsis, 20) !!}</td>
                                         <td>{{ $book->publisher }}</td>
-                                        <td width="10%" colspan="2">
+                                        <td>{{ $book->status }}</td>
+                                        <td width="10%">
                                             <a href="{{ route('edit-book', $book->id) }}" class="btn btn-success btn-icon btn-sm" type="button">
-                                                <i class="fas fa-pen"></i></a> | 
+                                                <i class="fas fa-pen"></i></a>
                                             <a href="{{ route('hapus-book', $book->id) }}" class="btn btn-danger btn-icon btn-sm delete-confirm" type="button">
                                                 <i class="fas fa-minus"></i></a>
                                         </td>

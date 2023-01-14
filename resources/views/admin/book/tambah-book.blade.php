@@ -31,15 +31,15 @@
                                 </select>
                             </div>
                             <div class="form-group">
-                                <label for="bk_title" class="form-label">Nama Buku</label>
-                                <input type="text" id="bk_title" name="bk_title" class="form-control" placeholder="Masukan Nama Buku" required>
+                                <label for="bk_title" class="form-label">Judul</label>
+                                <input type="text" id="bk_title" name="bk_title" class="form-control" placeholder="Masukan Judul Buku" required>
                             </div>
                             <div class="form-group">
                                 <label for="bk_date" class="form-label">Tahun Terbit</label>
                                 <input type="date" id="bk_date" name="bk_date" class="form-control" placeholder="Masukan Tahun Terbit" required>
                             </div>
                             <div class="form-group">
-                                <label for="bk_writer" class="form-label">Nama Penulis</label>
+                                <label for="bk_writer" class="form-label">Penulis</label>
                                 <input type="text" id="bk_writer" name="bk_writer" class="form-control" placeholder="Masukan Nama Penulis" required>
                             </div>
                             <div class="form-group">
@@ -47,8 +47,12 @@
                                 <textarea type="text" id="synopsis" name="synopsis" class="form-control" required></textarea>
                             </div>
                             <div class="form-group">
-                                <label for="publisher" class="form-label">Nama Penerbit</label>
+                                <label for="publisher" class="form-label">Penerbit</label>
                                 <input type="text" id="publisher" name="publisher" class="form-control" placeholder="Masukan Nama Penerbit" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="status" class="form-label">Ketersediaan</label>
+                                <input type="text" id="status" name="status" class="form-control" placeholder="Masukan Ketersediaan Buku" required>
                             </div>
                             <div class="form-group">
                                 <button type="submit" class="btn btn-success btn-submit">Simpan</button>

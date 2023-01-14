@@ -3,11 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
+use Illuminate\Support\Carbon;
 use Auth;
+use App\Models\Book;
 use App\Models\User;
-use App\Models\Level;
+use App\Models\Booking;
 
-class DtUserController extends Controller
+class BookingSiswaController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,18 +19,22 @@ class DtUserController extends Controller
      */
     public function index()
     {
-        $dtUser = User::simplePaginate(5);
-        return view('admin.user.user', compact('dtUser'));
+        $dtBooking = Booking::where('users_id', Auth::id())->simplePaginate(5);
+        return view('siswa.booking.booking', compact('dtBooking'));
     }
 
-    public function search(Request $request)
+    public function bookingAdd(Request $request, $id)
     {
-        $view = $request->view;
-        $dtUser = User::where('name', 'like', "%" . $view . "%")
-                    ->orWhere('email', 'like', "%" . $view . "%")
-                    ->orWhere('nisn', 'like', "%" . $view . "%")
-                    ->simplePaginate(5);
-        return view('admin.user.user', compact('dtUser'));
+        $dtBooking = Booking::create([
+            'users_id' => Auth::user()->id,
+            'books_id' => $id,
+            'booking_start' => Carbon::now(),
+            'booking_end' => Carbon::tomorrow(),
+            // 'extend_book' => $request->extend_book,
+            'booking_number' => uniqid(),
+            'status' => 'Belum Disetujui'
+        ]);
+        return redirect('booking-siswa');
     }
 
     /**
@@ -70,8 +77,7 @@ class DtUserController extends Controller
      */
     public function edit($id)
     {
-        $dtUser = User::findOrfail($id);
-        return view('admin.user.edit-user', compact('dtUser'));
+        //
     }
 
     /**
@@ -83,11 +89,7 @@ class DtUserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $dtUser = User::findOrfail($id);
-        $dtUser->update([
-            'status' => $request->status
-        ]);
-        return redirect('user');
+        //
     }
 
     /**

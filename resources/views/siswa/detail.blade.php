@@ -21,11 +21,25 @@
                             <p class="card-text">Penulis : {!! $detail->bk_writer !!}</p>
                             <p class="card-text">{!! Str::limit($detail->synopsis, 250) !!}</p>
                             <p class="card-text">Penerbit : {!! $detail->publisher !!}</p>
-                            <span class="badge text-white bg-success">Tersedia</span>
+                            @if($detail->status == "Tersedia")
+                            <span class="badge text-white bg-success">{!! $detail->status !!}</span>
+                            @else
+                            <span class="badge text-white bg-danger">Kosong</span>
+                            @endif
+                            
                         </div>
-                        <div class="card-footer">
-                            <a href="#" class="btn btn-success btn-sm">Booking</a>
-                        </div>
+                        <form action="{{ route('tambah-booking', $detail->id) }}" method="POST">
+                        {{ csrf_field()}}
+                            @if($detail->status == "Tersedia")
+                            <div class="card-footer">
+                                <button type="submit" class="btn btn-success btn-sm">Booking</button>
+                            </div>
+                            @else
+                            <div class="card-footer">
+                                <button type="submit" class="btn btn-danger btn-sm" disabled>Booking</button>
+                            </div>
+                            @endif
+                        </form>
                     </div>
 
                     <!-- Content Row -->

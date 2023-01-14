@@ -17,7 +17,8 @@ class Book extends Model
         'bk_date',
         'bk_writer',
         'synopsis',
-        'publisher'
+        'publisher',
+        'status'
     ];
 
     public function catalogs(){

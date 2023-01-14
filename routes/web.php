@@ -10,10 +10,12 @@ use App\Http\Controllers\CatalogController;
 use App\Http\Controllers\BookController;
 use App\Http\Controllers\PengawasController;
 use App\Http\Controllers\DtUserController;
+use App\Http\Controllers\BookingController;
 
 // Users
 use App\Http\Controllers\SiswaController;
 use App\Http\Controllers\BukuSiswaController;
+use App\Http\Controllers\BookingSiswaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -47,6 +49,7 @@ Route::middleware(['auth', 'admin', 'revalidate'])->group(function () {
     Route::get('/edit-catalog/{id}', [CatalogController::class, 'edit'])->name('edit-catalog');
     Route::post('/update-catalog/{id}', [CatalogController::class, 'update'])->name('update-catalog');
     Route::get('/hapus-catalog/{id}', [CatalogController::class, 'destroy'])->name('hapus-catalog');
+    Route::get('/cari-catalog-admin', [CatalogController::class, 'search'])->name('search-catalog-admin');
 
     // CRUD Book
     Route::get('/book', [BookController::class, 'index'])->name('book');
@@ -55,6 +58,7 @@ Route::middleware(['auth', 'admin', 'revalidate'])->group(function () {
     Route::get('/edit-book/{id}', [BookController::class, 'edit'])->name('edit-book');
     Route::post('/update-book/{id}', [BookController::class, 'update'])->name('update-book');
     Route::get('/hapus-book/{id}', [BookController::class, 'destroy'])->name('hapus-book');
+    Route::get('/cari-buku-admin', [BookController::class, 'search'])->name('search-book-admin');
 
     // CRUD User
     Route::get('/user', [DtUserController::class, 'index'])->name('user');
@@ -63,6 +67,13 @@ Route::middleware(['auth', 'admin', 'revalidate'])->group(function () {
     Route::get('/edit-user/{id}', [DtUserController::class, 'edit'])->name('edit-user');
     Route::post('/update-user/{id}', [DtUserController::class, 'update'])->name('update-user');
     Route::get('/hapus-user/{id}', [DtUserController::class, 'destroy'])->name('hapus-user');
+    Route::get('/cari-user-admin', [DtUserController::class, 'search'])->name('search-user-admin');
+
+    // CRUD Booking
+    Route::get('/booking', [BookingController::class, 'index'])->name('booking');
+    Route::get('/edit-booking/{id}', [BookingController::class, 'edit'])->name('edit-booking');
+    Route::post('/update-booking/{id}', [BookingController::class, 'update'])->name('update-booking');
+    Route::get('/cari-booking-admin', [BookingController::class, 'search'])->name('search-booking-admin');
 
 });
 
@@ -84,6 +95,10 @@ Route::middleware(['auth', 'siswa', 'revalidate'])->group(function () {
     // Siswa Book
     Route::get('/buku', [BukuSiswaController::class, 'index'])->name('buku');
     Route::get('/cari-buku', [BukuSiswaController::class, 'search'])->name('search');
-    Route::get('/detail/{slug}', [BukuSiswaController::class, 'detail']);
+
+    // Siswa Booking
+    Route::get('/booking-siswa', [BookingSiswaController::class, 'index'])->name('booking-siswa');
+    Route::post('/tambah-booking/{id}', [BookingSiswaController::class, 'bookingAdd'])->name('tambah-booking');
+
 });
 
