@@ -55,7 +55,7 @@
                                         <td>{{ $booking->booking_end }}</td>
                                         <td>{{ $booking->extend_book }}</td>
                                         <td>{{ $booking->booking_number }}</td>
-                                        <td>{{ $booking->status }}</td>
+                                        <td>{{ $booking->stats }}</td>
                                         <td width="10%" colspan="2">
                                             <a href="{{ route('edit-booking', $booking->id) }}" class="btn btn-success btn-icon btn-sm" type="button">
                                                 <i class="fas fa-pen"></i></a>

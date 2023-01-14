@@ -18,14 +18,23 @@
                         <div class="card-body">
                         <form action="{{ route('update-booking-siswa',$dtBooking->id) }}" method="post" enctype="multipart/form-data">
                             {{ csrf_field() }}
-                            @if($dtBooking->status == "Disetujui")
+                            @if($dtBooking->stats == "Disetujui")
                             <div class="form-group">
                                 <label for="booking_start" class="form-label">Booking Dimulai</label>
-                                <input type="date" id="booking_start" name="booking_start" class="form-control" value="{{ $dtBooking->booking_start }}" disabled>
+                                <input type="date" id="booking_start" name="booking_start" class="form-control" value="{{ $dtBooking->booking_start }}" readonly>
                             </div>
                             <div class="form-group">
                                 <label for="booking_end" class="form-label">Booking Berakhir</label>
-                                <input type="date" id="booking_end" name="booking_end" class="form-control" value="{{ $dtBooking->booking_end }}" disabled>
+                                <input type="date" id="booking_end" name="booking_end" class="form-control" value="{{ $dtBooking->booking_end }}" readonly>
+                            </div>
+                            @elseif($dtBooking->stats == "Berakhir")
+                            <div class="form-group">
+                                <label for="booking_start" class="form-label">Booking Dimulai</label>
+                                <input type="date" id="booking_start" name="booking_start" class="form-control" value="{{ $dtBooking->booking_start }}" readonly>
+                            </div>
+                            <div class="form-group">
+                                <label for="booking_end" class="form-label">Booking Berakhir</label>
+                                <input type="date" id="booking_end" name="booking_end" class="form-control" value="{{ $dtBooking->booking_end }}" readonly>
                             </div>
                             @else
                             <div class="form-group">
@@ -37,10 +46,17 @@
                                 <input type="date" id="booking_end" name="booking_end" class="form-control" value="{{ $dtBooking->booking_end }}" required>
                             </div>
                             @endif
+                            @if($dtBooking->stats == "Berakhir")
                             <div class="form-group">
                                 <label for="extend_book" class="form-label">Perpanjangan</label>
-                                <input type="date" id="extend_book" name="extend_book" class="form-control" value="{{ $dtBooking->extend_book }}" required>
+                                <input type="date" id="extend_book" name="extend_book" class="form-control" value="{{ $dtBooking->extend_book }}" disabled>
                             </div>
+                            @else
+                            <div class="form-group">
+                                <label for="extend_book" class="form-label">Perpanjangan</label>
+                                <input type="date" id="extend_book" name="extend_book" class="form-control" value="{{ $dtBooking->extend_book }}">
+                            </div>
+                            @endif
                             <div class="form-group">
                                 <button type="submit" class="btn btn-success btn-submit">Simpan</button>
                             </div>

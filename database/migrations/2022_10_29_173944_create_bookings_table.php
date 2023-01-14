@@ -27,7 +27,7 @@ return new class extends Migration
             $table->date('booking_end');
             $table->date('extend_book')->nullable();
             $table->string('booking_number');
-            $table->string('status');
+            $table->string('stats');
             $table->timestamps();
         });
     }

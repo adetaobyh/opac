@@ -32,9 +32,20 @@ class BookingSiswaController extends Controller
             'booking_end' => Carbon::tomorrow(),
             // 'extend_book' => $request->extend_book,
             'booking_number' => uniqid(),
-            'status' => 'Belum Disetujui'
+            'stats' => 'Belum Disetujui'
         ]);
         return redirect('booking-siswa');
+    }
+
+    public function search(Request $request)
+    {
+        $view = $request->view;
+        $dtBooking = Booking::where('users_id', Auth::id())
+                    ->join('books', 'books.id', '=', 'bookings.books_id')
+                    ->where('books.bk_title', 'like', "%" . $view . "%")
+                    ->orWhere('booking_number', 'like', "%" . $view . "%")
+                    ->simplePaginate(5);
+        return view('siswa.booking.booking', compact('dtBooking'));
     }
 
     /**

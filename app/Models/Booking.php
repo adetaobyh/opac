@@ -17,7 +17,7 @@ class Booking extends Model
         'booking_end',
         'extend_book',
         'booking_number',
-        'status',
+        'stats',
     ];
 
     public function users(){

@@ -15,7 +15,7 @@
                             <h5 class="card-text">Data Booking</h5>
                         </div>
                         <div class="card-body">
-                            <form class="form row" method="get" action="#">
+                            <form class="form row" method="get" action="{{ route('search-booking-siswa') }}">
                                 <div class="col">
                                     <input type="text" name="view" class="form-control" id="view" placeholder="Masukkan Pencarian">
                                 </div>
@@ -23,7 +23,7 @@
                                     <button type="submit" class="btn btn-primary mb-3">Cari</button>
                                 </div>
                                 <div class="col-auto">
-                                    <a href="#" class="btn btn-danger btn-icon-split" type="button">
+                                    <a href="{{ route('booking-siswa') }}" class="btn btn-danger btn-icon-split" type="button">
                                         <span class="text">Kembali</span>
                                     </a>
                                 </div>
@@ -50,7 +50,7 @@
                                         <td>{{ $booking->booking_end }}</td>
                                         <td>{{ $booking->extend_book }}</td>
                                         <td>{{ $booking->booking_number }}</td>
-                                        <td>{{ $booking->status }}</td>
+                                        <td>{{ $booking->stats }}</td>
                                         <td width="10%" colspan="2">
                                             <a href="{{ route('edit-booking-siswa', $booking->id) }}" class="btn btn-success btn-icon btn-sm" type="button">
                                                 <i class="fas fa-pen"></i></a>
