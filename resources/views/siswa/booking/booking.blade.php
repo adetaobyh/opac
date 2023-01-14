@@ -32,7 +32,6 @@
                                 <thead>
                                     <tr>
                                         <th scope="col">No.</th>
-                                        <th scope="col">Siswa</th>
                                         <th scope="col">Buku</th>
                                         <th scope="col">Booking Dimulai</th>
                                         <th scope="col">Booking Berakhir</th>
@@ -46,7 +45,6 @@
                                     @foreach ($dtBooking as $booking)
                                     <tr>
                                         <td>{{ $dtBooking->firstItem()+$loop->index }}</td>
-                                        <td>{{ $booking->users->name }}</td>
                                         <td>{{ $booking->books->bk_title }}</td>
                                         <td>{{ $booking->booking_start }}</td>
                                         <td>{{ $booking->booking_end }}</td>
@@ -54,7 +52,7 @@
                                         <td>{{ $booking->booking_number }}</td>
                                         <td>{{ $booking->status }}</td>
                                         <td width="10%" colspan="2">
-                                            <a href="{{ route('edit-booking', $booking->id) }}" class="btn btn-success btn-icon btn-sm" type="button">
+                                            <a href="{{ route('edit-booking-siswa', $booking->id) }}" class="btn btn-success btn-icon btn-sm" type="button">
                                                 <i class="fas fa-pen"></i></a>
                                         </td>
                                     </tr>

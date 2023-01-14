@@ -99,6 +99,9 @@ Route::middleware(['auth', 'siswa', 'revalidate'])->group(function () {
     // Siswa Booking
     Route::get('/booking-siswa', [BookingSiswaController::class, 'index'])->name('booking-siswa');
     Route::post('/tambah-booking/{id}', [BookingSiswaController::class, 'bookingAdd'])->name('tambah-booking');
+    Route::get('/edit-booking-siswa/{id}', [BookingSiswaController::class, 'edit'])->name('edit-booking-siswa');
+    Route::post('/update-booking-siswa/{id}', [BookingSiswaController::class, 'update'])->name('update-booking-siswa');
+    Route::get('/cari-booking-siswa', [BookingSiswaController::class, 'search'])->name('search-booking-siswa');
 
 });
 

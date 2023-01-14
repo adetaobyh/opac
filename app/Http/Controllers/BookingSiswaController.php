@@ -77,7 +77,9 @@ class BookingSiswaController extends Controller
      */
     public function edit($id)
     {
-        //
+        $dtBook = Book::all();
+        $dtBooking = Booking::findOrFail($id);
+        return view('siswa.booking.edit-booking', compact('dtBook', 'dtBooking'));
     }
 
     /**
@@ -89,7 +91,13 @@ class BookingSiswaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $dtBooking = Booking::findOrFail($id);
+        $dtBooking->update([
+            'booking_start' => $request->booking_start,
+            'booking_end' => $request->booking_end,
+            'extend_book' => $request->extend_book
+        ]);
+        return redirect('booking-siswa');
     }
 
     /**

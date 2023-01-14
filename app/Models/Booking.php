@@ -17,7 +17,6 @@ class Booking extends Model
         'booking_end',
         'extend_book',
         'booking_number',
-        'slug',
         'status',
     ];
 
