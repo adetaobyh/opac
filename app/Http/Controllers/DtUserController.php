@@ -16,7 +16,7 @@ class DtUserController extends Controller
      */
     public function index()
     {
-        $dtUser = User::simplePaginate(5);
+        $dtUser = User::where('id', 3)->simplePaginate(5);
         return view('admin.user.user', compact('dtUser'));
     }
 
