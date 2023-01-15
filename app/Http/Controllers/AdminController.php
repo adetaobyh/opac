@@ -15,7 +15,7 @@ class AdminController extends Controller
         $book = Book::count();
         $booking = Booking::count();
         $catalog = Catalog::count();
-        $user = User::count();
+        $user = User::where('level_id', 3)->count();
         return view('admin.admin', compact('book', 'booking', 'catalog', 'user'));
     }
 }

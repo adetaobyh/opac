@@ -26,7 +26,7 @@ return new class extends Migration
             $table->string('synopsis');
             $table->string('publisher');
             $table->string('status');
-            $table->timestamps();
+            // $table->timestamps();
         });
     }
 

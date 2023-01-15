@@ -95,6 +95,7 @@
   <!--  Google Maps Plugin    -->
   <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
   <script src="{{ asset('assets/login/js/argon-design-system.min.js') }}" type="text/javascript"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   <script src="https://cdn.trackjs.com/agent/v3/latest/t.js"></script>
   <script>
     window.TrackJS &&
@@ -111,6 +112,7 @@
         });
     });
   </script>
+  @include('sweetalert::alert')
 </body>
 
 </html>

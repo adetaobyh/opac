@@ -94,6 +94,8 @@ Route::middleware(['auth', 'guru', 'revalidate'])->group(function () {
 
     // Pengawas Booking
     Route::get('/booking-pengawas', [BookingPengawasController::class, 'index'])->name('booking-pengawas');
+    Route::get('/cari-booking-pengawas', [BookingPengawasController::class, 'search'])->name('search-booking-pengawas');
+    Route::get('/booking/export/', [BookingPengawasController::class, 'export'])->name('export-booking-pengawas');
 
 });
 

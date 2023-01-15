@@ -18,10 +18,8 @@ class BookingController extends Controller
      */
     public function index()
     {
-        $dtUser = User::all();
-        $dtBook = Book::all();
         $dtBooking = Booking::simplePaginate(5);
-        return view('admin.booking.booking', compact('dtUser', 'dtBook', 'dtBooking'));
+        return view('admin.booking.booking', compact('dtBooking'));
     }
 
     public function search(Request $request)

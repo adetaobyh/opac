@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\DB;
+use RealRashid\SweetAlert\Facades\Alert;
 use Auth;
 
 class LoginController extends Controller
@@ -35,11 +36,12 @@ class LoginController extends Controller
             if (Auth::user()->level_id == 1) {
                 return redirect('admin');
             } elseif (Auth::user()->level_id == 2) {
-                return redirect('guru');
+                return redirect('pengawas');
             } elseif (Auth::user()->level_id == 3) {
                 return redirect('siswa');
             }
         }else{
+            Alert::error('Error', 'Email Atau Password Salah');
             return redirect('login');
         }
     }
