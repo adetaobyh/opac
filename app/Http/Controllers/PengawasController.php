@@ -3,6 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
+use Auth;
+use App\Models\Booking;
+use App\Models\Book;
+use App\Models\Catalog;
+use App\Models\User;
 
 class PengawasController extends Controller
 {
@@ -13,7 +19,9 @@ class PengawasController extends Controller
      */
     public function index()
     {
-        return view('pengawas.pengawas');
+        $book = Book::count();
+        $booking = Booking::count();
+        return view('pengawas.pengawas', compact('book', 'booking'));
     }
 
     /**

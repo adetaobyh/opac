@@ -8,7 +8,6 @@ use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CatalogController;
 use App\Http\Controllers\BookController;
-use App\Http\Controllers\PengawasController;
 use App\Http\Controllers\DtUserController;
 use App\Http\Controllers\BookingController;
 
@@ -16,6 +15,11 @@ use App\Http\Controllers\BookingController;
 use App\Http\Controllers\SiswaController;
 use App\Http\Controllers\BukuSiswaController;
 use App\Http\Controllers\BookingSiswaController;
+
+// Pengawas
+use App\Http\Controllers\PengawasController;
+use App\Http\Controllers\BookPengawasController;
+use App\Http\Controllers\BookingPengawasController;
 
 /*
 |--------------------------------------------------------------------------
@@ -82,6 +86,14 @@ Route::middleware(['auth', 'guru', 'revalidate'])->group(function () {
 
     // Pengawas
     Route::get('/pengawas', [PengawasController::class, 'index'])->name('pengawas');
+
+    // Pengawas Book
+    Route::get('/book-pengawas', [BookPengawasController::class, 'index'])->name('book-pengawas');
+    Route::get('/cari-buku-pengawas', [BookPengawasController::class, 'search'])->name('search-book-pengawas');
+    Route::get('/book/export/', [BookPengawasController::class, 'export'])->name('export-book-pengawas');
+
+    // Pengawas Booking
+    Route::get('/booking-pengawas', [BookingPengawasController::class, 'index'])->name('booking-pengawas');
 
 });
 
