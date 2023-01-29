@@ -37,12 +37,15 @@
                                 <thead>
                                     <tr>
                                         <th scope="col">No.</th>
-                                        <th scope="col">Kategori</th>
+                                        <th scope="col">kategori</th>
                                         <th scope="col">Judul</th>
-                                        <th scope="col">Tahun Terbit</th>
+                                        <th scope="col">Kelas</th>
+                                        <!-- <th scope="col">Tahun Terbit</th>
                                         <th scope="col">Penulis</th>
                                         <th scope="col">Sinopsis</th>
-                                        <th scope="col">Penerbit</th>
+                                        <th scope="col">Penerbit</th> -->
+                                        <th scope="col">Lokasi</th>
+                                        <th scope="col">Kuantitas</th>
                                         <th scope="col">Ketersediaan</th>
                                         <th scope="col" colspan="2">Aksi</th>
                                     </tr>
@@ -51,12 +54,15 @@
                                     @foreach ($dtBook as $book)
                                     <tr>
                                         <td>{{ $dtBook->firstItem()+$loop->index }}</td>
-                                        <td>{{ $book->catalogs->nm_catalog }}</td>
+                                        <td>{{ $book->catalogs->name_catalog }}</td>
                                         <td>{{ $book->bk_title }}</td>
-                                        <td>{{ $book->bk_date }}</td>
+                                        <td>{{ $book->kelas->nm_kelas }}</td>
+                                        <!-- <td>{{ $book->bk_date }}</td>
                                         <td>{{ $book->bk_writer }}</td>
                                         <td>{!! Str::limit($book->synopsis, 20) !!}</td>
-                                        <td>{{ $book->publisher }}</td>
+                                        <td>{{ $book->publisher }}</td> -->
+                                        <td>{{ $book->bk_location }}</td>
+                                        <td>{{ $book->bk_qty }}</td>
                                         <td>{{ $book->status }}</td>
                                         <td width="10%">
                                             <a href="{{ route('edit-book', $book->id) }}" class="btn btn-success btn-icon btn-sm" type="button">

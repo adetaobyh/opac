@@ -13,25 +13,21 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('levels', function (Blueprint $table) {
+        Schema::create('kelas', function (Blueprint $table) {
             $table->id();
-            $table->string('kd_level');
-            $table->string('nm_level');
+            $table->string('nm_kelas');
             //$table->timestamps();
         });
 
-        DB::table('levels')->insert([
+        DB::table('kelas')->insert([
             [
-                'kd_level' => 'L001',
-                'nm_level' => 'Admin'
+                'nm_kelas' => 'Kelas X'
             ],
             [
-                'kd_level' => 'L002',
-                'nm_level' => 'Guru'
+                'nm_kelas' => 'Kelas XI'
             ],
             [
-                'kd_level' => 'L003',
-                'nm_level' => 'Siswa'
+                'nm_kelas' => 'Kelas XII'
             ]
         ]);
     }
@@ -43,6 +39,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('levels');
+        Schema::dropIfExists('kelas');
     }
 };

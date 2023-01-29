@@ -48,6 +48,7 @@
               <form action="{{ route('register') }}" method="post" enctype="multipart/form-data">
 			    {{ csrf_field() }}
                 <div class="form-group mb-3">
+                <label for="username" class="form-label">Username</label>
                   <div class="input-group input-group-alternative">
                     <div class="input-group-prepend">
                       <span class="input-group-text"><i class="ni ni-single-02"></i></span>
@@ -56,14 +57,26 @@
                   </div>
                 </div>
                 <div class="form-group mb-3">
+                <label for="name" class="form-label">Nama</label>
                   <div class="input-group input-group-alternative">
                     <div class="input-group-prepend">
                       <span class="input-group-text"><i class="ni ni-single-02"></i></span>
                     </div>
-                    <input class="form-control" id="name" name="name" placeholder="Name" type="text">
+                    <input class="form-control" id="name" name="name" placeholder="Nama" type="text">
                   </div>
                 </div>
                 <div class="form-group mb-3">
+                <label for="kelas_id" class="form-label">Kelas</label>
+                  <div class="input-group input-group-alternative">
+                      <select class="form-control" id="kelas_id" name="kelas_id">
+                          @foreach($kelas as $kls)
+                          <option value="{{ $kls->id }}">{{ $kls->nm_kelas }}</option>
+                          @endforeach
+                      </select>
+                  </div>
+                </div>
+                <div class="form-group mb-3">
+                <label for="email" class="form-label">Email</label>
                   <div class="input-group input-group-alternative">
                     <div class="input-group-prepend">
                       <span class="input-group-text"><i class="ni ni-email-83"></i></span>
@@ -84,6 +97,7 @@
                   </div> -->
                 </div>
                 <div class="form-group focused">
+                <label for="password" class="form-label">Password</label>
                   <div class="input-group input-group-alternative">
                     <div class="input-group-prepend">
                       <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
@@ -92,6 +106,7 @@
                   </div>
                 </div>
                 <div class="form-group focused">
+                <label for="phone_number" class="form-label">No Handphone</label>
                   <div class="input-group input-group-alternative">
                     <div class="input-group-prepend">
                       <span class="input-group-text"><i class="ni ni-mobile-button"></i></span>

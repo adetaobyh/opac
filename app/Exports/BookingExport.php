@@ -19,7 +19,7 @@ class BookingExport implements FromCollection
         return Booking::join('users', 'users.id', '=', 'bookings.users_id')
                         ->join('books', 'books.id', '=', 'bookings.books_id')
                         ->select('users.name','books.bk_title','booking_start'
-                        ,'booking_end','extend_book','stats')
+                        ,'booking_end','extend_book','booking_number','stats')
                         ->get();
     }
 }

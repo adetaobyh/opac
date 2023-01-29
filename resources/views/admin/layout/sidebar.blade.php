@@ -36,10 +36,18 @@
     </a>
 </li>
 
+<!-- Nav Item - Pages Collapse Menu -->
 <li class="nav-item {{ (Request::is('catalog') || Request::is('catalog/*') ? 'active open' : '') }}">
     <a class="nav-link" href="{{ route('catalog') }}">
         <i class="fa-solid fa-table-list"></i>
-        <span>Kategori</span>
+        <span>Daftar Katalog</span>
+    </a>
+</li>
+
+<li class="nav-item {{ (Request::is('kelas') || Request::is('kelas/*') ? 'active open' : '') }}">
+    <a class="nav-link" href="{{ route('kelas') }}">
+    <i class="fa-solid fa-school"></i>
+        <span>Daftar Kelas</span>
     </a>
 </li>
 

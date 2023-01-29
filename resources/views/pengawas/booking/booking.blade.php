@@ -39,7 +39,6 @@
                             <table class="table table-hover">
                                 <thead>
                                     <tr>
-                                        <th scope="col">No.</th>
                                         <th scope="col">Siswa</th>
                                         <th scope="col">Buku</th>
                                         <th scope="col">Booking Dimulai</th>
@@ -52,7 +51,6 @@
                                 <tbody>
                                     @foreach ($dtBooking as $booking)
                                     <tr>
-                                        <td>{{ $dtBooking->firstItem()+$loop->index }}</td>
                                         <td>{{ $booking->users->name }}</td>
                                         <td>{{ $booking->books->bk_title }}</td>
                                         <td>{{ $booking->booking_start }}</td>
@@ -64,7 +62,7 @@
                                     @endforeach
                                 </tbody>
                             </table>
-                            {{ $dtBooking->links() }}
+                            
                         </div>
                     </div>
 

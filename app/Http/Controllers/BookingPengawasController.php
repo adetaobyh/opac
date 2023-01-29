@@ -32,6 +32,6 @@ class BookingPengawasController extends Controller
 
     public function export() 
     {
-        return Excel::download(new BookingExport, 'Booking.xlsx');
+        return Excel::download(new BookingExport, 'Booking.pdf', \Maatwebsite\Excel\Excel::DOMPDF);
     }
 }

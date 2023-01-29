@@ -23,10 +23,10 @@
                         <form action="{{ route('simpan-book') }}" method="post" enctype="multipart/form-data">
                             {{ csrf_field() }}
                             <div class="form-group">
-                                <label for="catalogs_id" class="form-label">Kategori</label>
-                                <select class="form-control" name="catalogs_id" id="catalogs_id">
+                                <label for="catalog_id" class="form-label">Katalog</label>
+                                <select class="form-control" name="catalog_id" id="catalog_id">
                                     @foreach($dtCatalog as $cat)
-                                        <option value="{{ $cat->id }}" required>{{ $cat->nm_catalog }}</option>
+                                        <option value="{{ $cat->id }}" required>{{ $cat->name_catalog }}</option>
                                     @endforeach
                                 </select>
                             </div>
@@ -35,6 +35,14 @@
                                 <input type="text" id="bk_title" name="bk_title" class="form-control" placeholder="Masukan Judul Buku" required>
                             </div>
                             <div class="form-group">
+                                <label for="kelas_id" class="form-label">Kelas</label>
+                                <select class="form-control" name="kelas_id" id="kelas_id">
+                                    @foreach($dtKelas as $kls)
+                                        <option value="{{ $kls->id }}" required>{{ $kls->nm_kelas }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                            <!-- <div class="form-group">
                                 <label for="bk_date" class="form-label">Tahun Terbit</label>
                                 <input type="date" id="bk_date" name="bk_date" class="form-control" placeholder="Masukan Tahun Terbit" required>
                             </div>
@@ -49,10 +57,20 @@
                             <div class="form-group">
                                 <label for="publisher" class="form-label">Penerbit</label>
                                 <input type="text" id="publisher" name="publisher" class="form-control" placeholder="Masukan Nama Penerbit" required>
+                            </div> -->
+                            <div class="form-group">
+                                <label for="bk_location" class="form-label">Lokasi</label>
+                                <input type="text" id="bk_location" name="bk_location" class="form-control" placeholder="Masukan Lokasi Buku" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="bk_qty" class="form-label">Kuantitas</label>
+                                <input type="number" min="0" id="bk_qty" name="bk_qty" class="form-control"
+                                oninput="validity.valid ? this.save = value : value = this.save;" placeholder="Masukan Kuantitas Buku" required>
                             </div>
                             <div class="form-group">
                                 <label for="status" class="form-label">Ketersediaan</label>
                                 <input type="text" id="status" name="status" class="form-control" placeholder="Masukan Ketersediaan Buku" required>
+                                <p class="">*Note : Tersedia, Kosong</p>
                             </div>
                             <div class="form-group">
                                 <button type="submit" class="btn btn-success btn-submit">Simpan</button>

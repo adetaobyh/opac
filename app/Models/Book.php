@@ -12,21 +12,24 @@ class Book extends Model
     protected $primaryKey = "id";
     public $timestamps = false;
     protected $fillable = [
-        'catalogs_id',
+        'kelas_id',
+        'catalog_id',
         'bk_title',
         'slug',
-        'bk_date',
-        'bk_writer',
-        'synopsis',
-        'publisher',
+        'bk_qty',
+        // 'bk_date',
+        // 'bk_writer',
+        // 'synopsis',
+        // 'publisher',
+        'bk_location',
         'status'
     ];
 
     public function catalogs(){
-        return $this->belongsTo(Catalog::class);
+        return $this->belongsTo(Catalog::class, 'catalog_id');
     }
 
-    public function bookings(){
-        return $this->belongsTo(Booking::class);
+    public function kelas(){
+        return $this->belongsTo(Kelas::class);
     }
 }

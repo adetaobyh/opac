@@ -6,12 +6,14 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\User;
 use App\Models\Level;
+use App\Models\Kelas;
 use Auth;
 
 class RegisterController extends Controller
 {
     public function index()
     {
+        $kelas = Kelas::all();
         $levels = DB::table('levels')->get();
         if(Auth::check()) {
             if (Auth::user()->role_id == 1) {
@@ -22,7 +24,7 @@ class RegisterController extends Controller
                 return redirect('siswa');
             }
         }else{
-            return view('login-regist.register', compact('levels'));
+            return view('login-regist.register', compact('levels', 'kelas'));
         }
         
     }
@@ -32,6 +34,7 @@ class RegisterController extends Controller
         User::create([
             'username' => $request->username,
             'name' => $request->name,
+            'kelas_id' => $request->kelas_id,
             'email' => $request->email,
             'nisn' => mt_rand(100000000000, 999999999999),
             'password' => bcrypt($request->password),

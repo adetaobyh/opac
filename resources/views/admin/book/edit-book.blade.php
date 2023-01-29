@@ -23,11 +23,11 @@
                         <form action="{{ route('update-book',$dtBook->id) }}" method="post" enctype="multipart/form-data">
                             {{ csrf_field() }}
                             <div class="form-group">
-                                <label for="catalogs_id" class="form-label">Kategori</label>
-                                <select class="form-control" name="catalogs_id" id="catalogs_id">
-                                <option value="{{ $dtBook->catalogs_id }}">{{ $dtBook->catalogs->nm_catalog }}</option>
+                                <label for="catalog_id" class="form-label">Katalog</label>
+                                <select class="form-control" name="catalog_id" id="catalog_id">
+                                <option value="{{ $dtBook->catalog_id }}">{{ $dtBook->catalogs->name_catalog }}</option>
                                     @foreach($dtCatalog as $cat)
-                                        <option value="{{ $cat->id }}" required>{{ $cat->nm_catalog }}</option>
+                                        <option value="{{ $cat->id }}" required>{{ $cat->catalog_id }}</option>
                                     @endforeach
                                 </select>
                             </div>
@@ -36,6 +36,15 @@
                                 <input type="text" id="bk_title" name="bk_title" class="form-control" value="{{ $dtBook->bk_title }}" required>
                             </div>
                             <div class="form-group">
+                                <label for="kelas_id" class="form-label">Kelas</label>
+                                <select class="form-control" name="kelas_id" id="kelas_id">
+                                <option value="{{ $dtBook->kelas_id }}">{{ $dtBook->kelas->nm_kelas }}</option>
+                                    @foreach($dtKelas as $kls)
+                                        <option value="{{ $kls->id }}" required>{{ $kls->nm_kelas }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                            <!-- <div class="form-group">
                                 <label for="bk_date" class="form-label">Tahun Terbit</label>
                                 <input type="date" id="bk_date" name="bk_date" class="form-control" value="{{ $dtBook->bk_date }}" required>
                             </div>
@@ -50,10 +59,20 @@
                             <div class="form-group">
                                 <label for="publisher" class="form-label">Penerbit</label>
                                 <input type="text" id="publisher" name="publisher" class="form-control" value="{{ $dtBook->publisher }}" required>
+                            </div> -->
+                            <div class="form-group">
+                                <label for="bk_location" class="form-label">Lokasi</label>
+                                <input type="text" id="bk_location" name="bk_location" class="form-control" value="{{ $dtBook->bk_location }}" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="bk_qty" class="form-label">Kuantitas</label>
+                                <input type="number" min="0" id="bk_qty" name="bk_qty" class="form-control"
+                                oninput="validity.valid ? this.save = value : value = this.save;" value="{{ $dtBook->bk_qty }}" required>
                             </div>
                             <div class="form-group">
                                 <label for="status" class="form-label">Ketersediaan</label>
                                 <input type="text" id="status" name="status" class="form-control" value="{{ $dtBook->status }}" required>
+                                <p class="">*Note : Tersedia, Kosong</p>
                             </div>
                             <div class="form-group">
                                 <button type="submit" class="btn btn-success btn-submit">Simpan</button>

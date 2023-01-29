@@ -15,16 +15,22 @@ return new class extends Migration
     {
         Schema::create('books', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('catalogs_id')
+            $table->foreignId('kelas_id')
+                ->constrained()
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
+            $table->foreignId('catalog_id')
                 ->constrained()
                 ->onUpdate('cascade')
                 ->onDelete('cascade');
             $table->string('bk_title');
             $table->string('slug');
-            $table->string('bk_date');
-            $table->string('bk_writer');
-            $table->string('synopsis');
-            $table->string('publisher');
+            // $table->string('bk_date');
+            // $table->string('bk_writer');
+            // $table->string('synopsis');
+            // $table->string('publisher');
+            $table->integer('bk_qty');
+            $table->string('bk_location');
             $table->string('status');
             // $table->timestamps();
         });

@@ -21,8 +21,10 @@ class User extends Authenticatable
      */
     protected $table = "users";
     protected $primaryKey = "id";
+    public $timestamps = false;
     protected $fillable = [
         'level_id',
+        'kelas_id',
         'username',
         'name',
         'email',
@@ -34,6 +36,10 @@ class User extends Authenticatable
 
     public function levels(){
         return $this->belongsTo(Level::class, 'level_id');
+    }
+
+    public function kelas(){
+        return $this->belongsTo(Kelas::class, 'kelas_id');
     }
 
     public function bookings(){

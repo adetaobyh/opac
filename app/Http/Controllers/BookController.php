@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use Auth;
 use App\Models\Book;
+use App\Models\Kelas;
 use App\Models\Catalog;
 
 class BookController extends Controller
@@ -39,7 +40,8 @@ class BookController extends Controller
     public function create()
     {
         $dtCatalog = Catalog::all();
-        return view('admin.book.tambah-book', compact('dtCatalog'));
+        $dtKelas = Kelas::all();
+        return view('admin.book.tambah-book', compact('dtCatalog', 'dtKelas'));
     }
 
     /**
@@ -51,13 +53,16 @@ class BookController extends Controller
     public function store(Request $request)
     {
         $dtBook = Book::create([
-            'catalogs_id' => $request->catalogs_id,
+            'kelas_id' => $request->kelas_id,
             'bk_title' => $request->bk_title,
             'slug' => Str::slug($request->get('bk_title')),
-            'bk_date' => $request->bk_date,
-            'bk_writer' => $request->bk_writer,
-            'synopsis' => $request->synopsis,
-            'publisher' => $request->publisher,
+            'catalog_id' => $request->catalog_id,
+            // 'bk_date' => $request->bk_date,
+            // 'bk_writer' => $request->bk_writer,
+            // 'synopsis' => $request->synopsis,
+            // 'publisher' => $request->publisher,
+            'bk_qty' => $request->bk_qty,
+            'bk_location' => $request->bk_location,
             'status' => $request->status
         ]);
         return redirect('book');
@@ -83,8 +88,9 @@ class BookController extends Controller
     public function edit($id)
     {
         $dtCatalog = Catalog::all();
+        $dtKelas = Kelas::all();
         $dtBook = Book::findOrFail($id);
-        return view('admin.book.edit-book', compact('dtCatalog', 'dtBook'));
+        return view('admin.book.edit-book', compact('dtCatalog', 'dtKelas', 'dtBook'));
     }
 
     /**
@@ -98,12 +104,15 @@ class BookController extends Controller
     {
         $dtBook = Book::findOrFail($id);
         $dtBook->update([
-            'catalogs_id' => $request->catalogs_id,
+            'kelas_id' => $request->kelas_id,
+            'catalog_id' => $request->catalog_id,
             'bk_title' => $request->bk_title,
-            'bk_date' => $request->bk_date,
-            'bk_writer' => $request->bk_writer,
-            'synopsis' => $request->synopsis,
-            'publisher' => $request->publisher,
+            // 'bk_date' => $request->bk_date,
+            // 'bk_writer' => $request->bk_writer,
+            // 'synopsis' => $request->synopsis,
+            // 'publisher' => $request->publisher,
+            'bk_qty' => $request->bk_qty,
+            'bk_location' => $request->bk_location,
             'status' => $request->status
         ]);
         return redirect('book');

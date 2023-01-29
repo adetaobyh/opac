@@ -15,9 +15,9 @@
                     <!-- Content Row -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <a href="{{ route('tambah-catalog') }}" class="btn btn-primary btn-icon-split" type="button">
+                            <!-- <a href="#" class="btn btn-primary btn-icon-split" type="button">
                                 <span class="text">Tambah Data</span>
-                            </a>
+                            </a> -->
                         </div>
                         <div class="card-body">
                             <form class="form row" method="get" action="{{ route('search-catalog-admin') }}">
@@ -39,21 +39,14 @@
                                         <th scope="col">No.</th>
                                         <th scope="col">Kode Kategori</th>
                                         <th scope="col">Nama Kategori</th>
-                                        <th scope="col" colspan="2">Aksi</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     @foreach ($dtCatalog as $ctlg)
                                     <tr>
                                         <td>{{ $dtCatalog->firstItem()+$loop->index }}</td>
-                                        <td>{{ $ctlg->kd_catalog }}</td>
-                                        <td>{{ $ctlg->nm_catalog }}</td>
-                                        <td width="10%" colspan="2">
-                                            <a href="{{ route('edit-catalog', $ctlg->id) }}" class="btn btn-success btn-icon btn-sm" type="button">
-                                                <i class="fas fa-pen"></i></a>
-                                            <a href="{{ route('hapus-catalog', $ctlg->id) }}" class="btn btn-danger btn-icon btn-sm delete-confirm" type="button">
-                                                <i class="fas fa-minus"></i></a>
-                                        </td>
+                                        <td>{{ $ctlg->name_catalog }}</td>
+                                        <td>{{ $ctlg->bk_for }}</td>
                                     </tr>
                                     @endforeach
                                 </tbody>

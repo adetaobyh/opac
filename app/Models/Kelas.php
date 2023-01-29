@@ -5,18 +5,21 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Catalog extends Model
+class Kelas extends Model
 {
     use HasFactory;
-    protected $table = "catalogs";
+    protected $table = "kelas";
     protected $primaryKey = "id";
     public $timestamps = false;
     protected $fillable = [
-        'name_catalog',
-        'bk_for'
+        'nm_kelas'
     ];
 
     public function books(){
-        return $this->hasMany(Book::class);
+        return $this->belongsTo(Book::class);
+    }
+
+    public function users(){
+        return $this->belongsTo(User::class);
     }
 }

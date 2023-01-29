@@ -10,6 +10,7 @@ use App\Http\Controllers\CatalogController;
 use App\Http\Controllers\BookController;
 use App\Http\Controllers\DtUserController;
 use App\Http\Controllers\BookingController;
+use App\Http\Controllers\KelasController;
 
 // Users
 use App\Http\Controllers\SiswaController;
@@ -48,11 +49,6 @@ Route::middleware(['auth', 'admin', 'revalidate'])->group(function () {
     
     // CRUD Catalog
     Route::get('/catalog', [CatalogController::class, 'index'])->name('catalog');
-    Route::get('/tambah-catalog', [CatalogController::class, 'create'])->name('tambah-catalog');
-    Route::post('/simpan-catalog', [CatalogController::class, 'store'])->name('simpan-catalog');
-    Route::get('/edit-catalog/{id}', [CatalogController::class, 'edit'])->name('edit-catalog');
-    Route::post('/update-catalog/{id}', [CatalogController::class, 'update'])->name('update-catalog');
-    Route::get('/hapus-catalog/{id}', [CatalogController::class, 'destroy'])->name('hapus-catalog');
     Route::get('/cari-catalog-admin', [CatalogController::class, 'search'])->name('search-catalog-admin');
 
     // CRUD Book
@@ -78,6 +74,15 @@ Route::middleware(['auth', 'admin', 'revalidate'])->group(function () {
     Route::get('/edit-booking/{id}', [BookingController::class, 'edit'])->name('edit-booking');
     Route::post('/update-booking/{id}', [BookingController::class, 'update'])->name('update-booking');
     Route::get('/cari-booking-admin', [BookingController::class, 'search'])->name('search-booking-admin');
+
+    // CRUD Kelas
+    Route::get('/kelas', [KelasController::class, 'index'])->name('kelas');
+    Route::get('/tambah-kelas', [KelasController::class, 'create'])->name('tambah-kelas');
+    Route::post('/simpan-kelas', [KelasController::class, 'store'])->name('simpan-kelas');
+    Route::get('/edit-kelas/{id}', [KelasController::class, 'edit'])->name('edit-kelas');
+    Route::post('/update-kelas/{id}', [KelasController::class, 'update'])->name('update-kelas');
+    Route::get('/hapus-kelas/{id}', [KelasController::class, 'destroy'])->name('hapus-kelas');
+    Route::get('/cari-kelas-admin', [KelasController::class, 'search'])->name('search-kelas-admin');
 
 });
 

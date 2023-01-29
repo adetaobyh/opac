@@ -17,6 +17,11 @@ return new class extends Migration
             $table->id();
             $table->foreignId('level_id')
                 ->constrained();
+            $table->foreignId('kelas_id')
+                ->nullable()
+                ->constrained()
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
             $table->string('username');
             $table->string('name');
             $table->string('email')->unique();
@@ -24,7 +29,7 @@ return new class extends Migration
             $table->string('password');
             $table->bigInteger('phone_number');
             $table->string('status')->default('not active');
-            $table->timestamps();
+            //$table->timestamps();
         });
 
         DB::table('users')->insert([

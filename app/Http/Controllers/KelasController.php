@@ -3,12 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Str;
 use Auth;
-use App\Models\Catalog;
 use App\Models\User;
+use App\Models\Kelas;
 
-class CatalogController extends Controller
+class KelasController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,17 +16,8 @@ class CatalogController extends Controller
      */
     public function index()
     {
-        $dtCatalog = Catalog::simplePaginate(5);
-        return view('admin.catalog.catalog', compact('dtCatalog'));
-    }
-
-    public function search(Request $request)
-    {
-        $view = $request->view;
-        $dtCatalog = Catalog::where('name_catalog', 'like', "%" . $view . "%")
-                    ->orWhere('bk_for', 'like', "%" . $view . "%")
-                    ->simplePaginate(5);
-        return view('admin.catalog.catalog', compact('dtCatalog'));
+        $dtKelas = Kelas::simplePaginate(5);
+        return view('admin.kelas.kelas', compact('dtKelas'));
     }
 
     /**
@@ -37,7 +27,7 @@ class CatalogController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.kelas.tambah-kelas');
     }
 
     /**
@@ -48,7 +38,11 @@ class CatalogController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $dtKelas = Kelas::create([
+            'nm_kelas' => $request->nm_kelas
+        ]);
+
+        return redirect('kelas');
     }
 
     /**

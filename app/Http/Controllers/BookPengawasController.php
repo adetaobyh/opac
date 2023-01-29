@@ -30,6 +30,6 @@ class BookPengawasController extends Controller
 
     public function export() 
     {
-        return Excel::download(new BookExport, 'Book.xlsx');
+        return Excel::download(new BookExport, 'Book.xlsx', \Maatwebsite\Excel\Excel::DOMPDF);
     }
 }
