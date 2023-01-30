@@ -45,6 +45,7 @@
                             <div class="form-group">
                                 <label for="status" class="form-label">Status</label>
                                 <input type="text" id="status" name="status" class="form-control" value="{{ $dtUser->status }}" required>
+                                <p style="color: red;">*Note : active, not active</p>
                             </div>
                             <div class="form-group">
                                 <button type="submit" class="btn btn-success btn-submit">Simpan</button>

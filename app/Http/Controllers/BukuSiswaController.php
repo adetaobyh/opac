@@ -23,10 +23,13 @@ class BukuSiswaController extends Controller
     public function search(Request $request)
     {
         $view = $request->view;
-        $dtResult = Book::where('bk_title', 'like', "%" . $view . "%")
-                    ->orWhere('bk_writer', 'like', "%" . $view . "%")
-                    ->orWhere('publisher', 'like', "%" . $view . "%")
-                    ->simplePaginate(4);
+        $dtResult = Book::join('catalogs', 'catalogs.id', '=', 'books.catalog_id')
+                    ->join('kelas', 'kelas.id', '=', 'books.kelas_id')
+                    ->where('catalogs.name_catalog', 'like', "%" . $view . "%")
+                    ->orWhere('kelas.nm_kelas', 'like', "%" . $view . "%")
+                    ->orWhere('bk_title', 'like', "%" . $view . "%")
+                    ->orWhere('bk_location', 'like', "%" . $view . "%")
+                    ->simplePaginate(5);
         return view('siswa.book.result', compact('dtResult'));
     }
 

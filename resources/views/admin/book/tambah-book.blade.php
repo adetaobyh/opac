@@ -70,7 +70,7 @@
                             <div class="form-group">
                                 <label for="status" class="form-label">Ketersediaan</label>
                                 <input type="text" id="status" name="status" class="form-control" placeholder="Masukan Ketersediaan Buku" required>
-                                <p class="">*Note : Tersedia, Kosong</p>
+                                <p style="color: red;">*Note : Tersedia, Kosong</p>
                             </div>
                             <div class="form-group">
                                 <button type="submit" class="btn btn-success btn-submit">Simpan</button>

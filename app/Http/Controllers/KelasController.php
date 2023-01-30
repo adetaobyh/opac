@@ -20,6 +20,14 @@ class KelasController extends Controller
         return view('admin.kelas.kelas', compact('dtKelas'));
     }
 
+    public function search(Request $request)
+    {
+        $view = $request->view;
+        $dtKelas = Kelas::where('nm_kelas', 'like', "%" . $view . "%")
+                    ->simplePaginate(5);
+        return view('admin.kelas.kelas', compact('dtKelas'));
+    }
+
     /**
      * Show the form for creating a new resource.
      *
