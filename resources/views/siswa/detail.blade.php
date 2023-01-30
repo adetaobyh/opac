@@ -30,7 +30,7 @@
                         </div>
                         <form action="{{ route('tambah-booking', $detail->id) }}" method="POST">
                         {{ csrf_field()}}
-                            @if($detail->status == "Tersedia")
+                            @if($detail->bk_qty >= 1)
                             <div class="card-footer">
                                 <button type="submit" class="btn btn-success btn-sm">Booking</button>
                             </div>

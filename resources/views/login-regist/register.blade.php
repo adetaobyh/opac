@@ -105,6 +105,10 @@
                     <input class="form-control" placeholder="Password" name="password" id="password" type="password">
                   </div>
                 </div>
+                <div class="custom-control custom-control-alternative custom-checkbox mb-3">
+                  <input class="custom-control-input" id="checkbox" type="checkbox">
+                  <label class="custom-control-label" for="checkbox"><span>Show Password</span></label>
+                </div>
                 <div class="form-group focused">
                 <label for="phone_number" class="form-label">No Handphone</label>
                   <div class="input-group input-group-alternative">
@@ -113,10 +117,6 @@
                     </div>
                     <input class="form-control" placeholder="Phone Number" name="phone_number" id="phone_number" type="number" min="0">
                   </div>
-                </div>
-                <div class="custom-control custom-control-alternative custom-checkbox">
-                  <input class="custom-control-input" id="checkbox" type="checkbox">
-                  <label class="custom-control-label" for="checkbox"><span>Show Password</span></label>
                 </div>
                 <div class="text-center">
                   <button type="submit" class="btn btn-primary my-4">Regist</button>
