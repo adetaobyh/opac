@@ -64,7 +64,8 @@ class KelasController extends Controller
      */
     public function edit($id)
     {
-        //
+        $dtKelas = Kelas::findOrFail($id);
+        return view('admin.kelas.edit-kelas', compact('dtKelas'));
     }
 
     /**
@@ -76,7 +77,12 @@ class KelasController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $dtKelas = Kelas::findOrFail($id);
+        $dtKelas = Kelas::update([
+            'nm_kelas' => $request->nm_kelas
+        ]);
+
+        return redirect('kelas');
     }
 
     /**
@@ -87,6 +93,8 @@ class KelasController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $dtKelas = Kelas::findOrFail($id);
+        $dtKelas->delete();
+        return redirect('kelas');
     }
 }
