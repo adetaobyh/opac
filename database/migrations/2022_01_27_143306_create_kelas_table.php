@@ -21,13 +21,13 @@ return new class extends Migration
 
         DB::table('kelas')->insert([
             [
-                'nm_kelas' => 'Kelas X'
+                'nm_kelas' => '10'
             ],
             [
-                'nm_kelas' => 'Kelas XI'
+                'nm_kelas' => '11'
             ],
             [
-                'nm_kelas' => 'Kelas XII'
+                'nm_kelas' => '12'
             ]
         ]);
     }

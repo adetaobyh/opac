@@ -27,7 +27,7 @@
                                 <select class="form-control" name="catalog_id" id="catalog_id">
                                 <option value="{{ $dtBook->catalog_id }}">{{ $dtBook->catalogs->name_catalog }}</option>
                                     @foreach($dtCatalog as $cat)
-                                        <option value="{{ $cat->id }}" required>{{ $cat->catalog_id }}</option>
+                                        <option value="{{ $cat->id }}" required>{{ $cat->name_catalog }}</option>
                                     @endforeach
                                 </select>
                             </div>

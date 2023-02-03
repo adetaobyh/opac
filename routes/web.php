@@ -108,7 +108,7 @@ Route::middleware(['auth', 'guru', 'revalidate'])->group(function () {
 Route::middleware(['auth', 'siswa', 'revalidate'])->group(function () {
     
     // Siswa Dashboard
-    Route::get('/siswa', [SiswaController::class, 'index'])->name('siswa');
+    //Route::get('/siswa', [SiswaController::class, 'index'])->name('siswa');
     Route::get('/detail/{slug}', [SiswaController::class, 'detail']);
 
     // Siswa Book

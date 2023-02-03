@@ -13,14 +13,14 @@
 <hr class="sidebar-divider my-0">
 
 <!-- Nav Item - Dashboard -->
-<li class="nav-item {{ (Request::is('siswa') || Request::is('siswa/*') ? 'active open' : '') }}">
-    <a class="nav-link" href="{{ route('siswa') }}">
+<!-- <li class="nav-item">
+    <a class="nav-link" href="#">
         <i class="fa-solid fa-gauge"></i>
         <span>Dashboard</span>
     </a>
 </li>
 
-<hr class="sidebar-divider my-0">
+<hr class="sidebar-divider my-0"> -->
 
 <li class="nav-item {{ (Request::is('buku') || Request::is('buku/*') ? 'active open' : '') }}">
     <a class="nav-link" href="{{ route('buku') }}">

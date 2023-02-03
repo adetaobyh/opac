@@ -38,7 +38,7 @@ class LoginController extends Controller
             } elseif (Auth::user()->level_id == 2) {
                 return redirect('pengawas');
             } elseif (Auth::user()->level_id == 3) {
-                return redirect('siswa');
+                return redirect('buku');
             }
         }else{
             Alert::error('Error', 'Email Atau Password Salah');
