@@ -16,6 +16,7 @@ use App\Http\Controllers\KelasController;
 use App\Http\Controllers\SiswaController;
 use App\Http\Controllers\BukuSiswaController;
 use App\Http\Controllers\BookingSiswaController;
+use App\Http\Controllers\CatalogSiswaController;
 
 // Pengawas
 use App\Http\Controllers\PengawasController;
@@ -121,6 +122,10 @@ Route::middleware(['auth', 'siswa', 'revalidate'])->group(function () {
     Route::get('/edit-booking-siswa/{id}', [BookingSiswaController::class, 'edit'])->name('edit-booking-siswa');
     Route::post('/update-booking-siswa/{id}', [BookingSiswaController::class, 'update'])->name('update-booking-siswa');
     Route::get('/cari-booking-siswa', [BookingSiswaController::class, 'search'])->name('search-booking-siswa');
+
+    // Siswa Catalog
+    Route::get('/catalog-siswa', [CatalogSiswaController::class, 'index'])->name('catalog-siswa');
+    Route::get('/cari-catalog-siswa', [CatalogSiswaController::class, 'search'])->name('search-catalog-siswa');
 
 });
 

@@ -18,9 +18,9 @@ class Book extends Model
         'slug',
         'bk_qty',
         // 'bk_date',
-        // 'bk_writer',
+        'bk_writer',
         // 'synopsis',
-        // 'publisher',
+        'publisher',
         'bk_location',
         'status'
     ];

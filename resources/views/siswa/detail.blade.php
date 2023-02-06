@@ -19,8 +19,9 @@
                         </div>
                         <div class="card-body">
                             <p class="card-text">Penulis : {!! $detail->bk_writer !!}</p>
-                            <p class="card-text">{!! Str::limit($detail->synopsis, 250) !!}</p>
+                            <p class="card-text">Katalog : {{ $detail->catalogs->name_catalog }}</p>
                             <p class="card-text">Penerbit : {!! $detail->publisher !!}</p>
+                            <p class="card-text">Kuantitas : {!! $detail->bk_qty !!}</p>
                             @if($detail->status == "Tersedia")
                             <span class="badge text-white bg-success">{!! $detail->status !!}</span>
                             @else
@@ -32,6 +33,7 @@
                         {{ csrf_field()}}
                             @if($detail->bk_qty >= 1)
                             <div class="card-footer">
+                                <input type="number" min="1" max="{{ $detail->bk_qty }}" id="quantity" name="quantity" class="form-control mb-3" value="1" hidden>
                                 <button type="submit" class="btn btn-success btn-sm">Booking</button>
                             </div>
                             @else

@@ -61,9 +61,9 @@ class BookController extends Controller
             'slug' => Str::slug($request->get('bk_title')),
             'catalog_id' => $request->catalog_id,
             // 'bk_date' => $request->bk_date,
-            // 'bk_writer' => $request->bk_writer,
+            'bk_writer' => $request->bk_writer,
             // 'synopsis' => $request->synopsis,
-            // 'publisher' => $request->publisher,
+            'publisher' => $request->publisher,
             'bk_qty' => $request->bk_qty,
             'bk_location' => $request->bk_location,
             'status' => $request->status
@@ -111,9 +111,9 @@ class BookController extends Controller
             'catalog_id' => $request->catalog_id,
             'bk_title' => $request->bk_title,
             // 'bk_date' => $request->bk_date,
-            // 'bk_writer' => $request->bk_writer,
+            'bk_writer' => $request->bk_writer,
             // 'synopsis' => $request->synopsis,
-            // 'publisher' => $request->publisher,
+            'publisher' => $request->publisher,
             'bk_qty' => $request->bk_qty,
             'bk_location' => $request->bk_location,
             'status' => $request->status

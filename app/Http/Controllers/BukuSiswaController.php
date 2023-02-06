@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use Auth;
 use App\Models\Book;
+use App\Models\kelas;
 use App\Models\Catalog;
 
 class BukuSiswaController extends Controller
@@ -17,7 +18,8 @@ class BukuSiswaController extends Controller
      */
     public function index()
     {
-        return view('siswa.book.book');
+        $dtKelas = Kelas::all();
+        return view('siswa.book.book', compact('dtKelas'));
     }
 
     public function search(Request $request)
@@ -28,10 +30,13 @@ class BukuSiswaController extends Controller
                     ->where('catalogs.name_catalog', 'like', "%" . $view . "%")
                     ->orWhere('kelas.nm_kelas', 'like', "%" . $view . "%")
                     ->orWhere('bk_title', 'like', "%" . $view . "%")
+                    ->orWhere('bk_writer', 'like', "%" . $view . "%")
+                    ->orWhere('publisher', 'like', "%" . $view . "%")
                     ->orWhere('bk_location', 'like', "%" . $view . "%")
                     ->simplePaginate(5);
         return view('siswa.book.result', compact('dtResult'));
     }
+
 
     public function detail($slug)
     {

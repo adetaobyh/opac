@@ -28,12 +28,14 @@ class BookingSiswaController extends Controller
         $dtBooking = Booking::create([
             'users_id' => Auth::user()->id,
             'books_id' => $id,
+            'quantity' => Book::where('id', $request->id)->decrement('bk_qty', $request->quantity),
             'booking_start' => Carbon::now(),
             'booking_end' => Carbon::tomorrow(),
             // 'extend_book' => $request->extend_book,
             'booking_number' => uniqid(),
             'stats' => 'Belum Disetujui'
         ]);
+        //dd($dtBooking);
         return redirect('booking-siswa');
     }
 

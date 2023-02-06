@@ -42,21 +42,21 @@
                                     @endforeach
                                 </select>
                             </div>
-                            <!-- <div class="form-group">
-                                <label for="bk_date" class="form-label">Tahun Terbit</label>
-                                <input type="date" id="bk_date" name="bk_date" class="form-control" placeholder="Masukan Tahun Terbit" required>
-                            </div>
                             <div class="form-group">
                                 <label for="bk_writer" class="form-label">Penulis</label>
                                 <input type="text" id="bk_writer" name="bk_writer" class="form-control" placeholder="Masukan Nama Penulis" required>
                             </div>
                             <div class="form-group">
-                                <label for="synopsis" class="form-label">Sinopsis</label>
-                                <textarea type="text" id="synopsis" name="synopsis" class="form-control" required></textarea>
-                            </div>
-                            <div class="form-group">
                                 <label for="publisher" class="form-label">Penerbit</label>
                                 <input type="text" id="publisher" name="publisher" class="form-control" placeholder="Masukan Nama Penerbit" required>
+                            </div>
+                            <!-- <div class="form-group">
+                                <label for="bk_date" class="form-label">Tahun Terbit</label>
+                                <input type="date" id="bk_date" name="bk_date" class="form-control" placeholder="Masukan Tahun Terbit" required>
+                            </div> -->
+                            <!-- <div class="form-group">
+                                <label for="synopsis" class="form-label">Sinopsis</label>
+                                <textarea type="text" id="synopsis" name="synopsis" class="form-control" required></textarea>
                             </div> -->
                             <div class="form-group">
                                 <label for="bk_location" class="form-label">Lokasi</label>

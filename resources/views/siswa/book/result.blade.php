@@ -24,6 +24,8 @@
                                     <th scope="col">No.</th>
                                     <th scope="col">kategori</th>
                                     <th scope="col">Judul</th>
+                                    <th scope="col">Penulis</th>
+                                    <th scope="col">Penerbit</th>
                                     <th scope="col">Kelas</th>
                                     <th scope="col">Lokasi</th>
                                     <th scope="col">Kuantitas</th>
@@ -37,6 +39,8 @@
                                     <td>{{ $dtResult->firstItem()+$loop->index }}</td>
                                     <td>{{ $result->catalogs->name_catalog }}</td>
                                     <td>{{ $result->bk_title }}</td>
+                                    <td>{{ $result->bk_writer }}</td>
+                                    <td>{{ $result->publisher }}</td>
                                     <td>{{ $result->kelas->nm_kelas }}</td>
                                     <td>{{ $result->bk_location }}</td>
                                     <td>{{ $result->bk_qty }}</td>
@@ -48,7 +52,7 @@
                                     @endif
                                     </td>
                                     <td width="10%">
-                                        <a href="{{ url('detail', $result->slug) }}" class="btn btn-success btn-sm w-75">
+                                        <a href="{{ url('detail', $result->slug) }}" class="btn btn-success btn-sm w-50">
                                             <i class="fas fa-info"></i>
                                         </a>
                                     </td>
@@ -56,13 +60,12 @@
                                 @endforeach
                             </tbody>
                         </table>
-                        {{ $dtResult->links() }}
                         </div>
                     </div>
 
                     <!-- Paginate -->
                     <div class="d-flex justify-content-center">
-                        {{ $dtResult->links() }}
+                        
                     </div>
 
                     <!-- Content Row -->

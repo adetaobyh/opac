@@ -13,19 +13,20 @@
 <hr class="sidebar-divider my-0">
 
 <!-- Nav Item - Dashboard -->
-<!-- <li class="nav-item">
-    <a class="nav-link" href="#">
-        <i class="fa-solid fa-gauge"></i>
-        <span>Dashboard</span>
-    </a>
-</li>
 
-<hr class="sidebar-divider my-0"> -->
+<!-- <hr class="sidebar-divider my-0"> -->
 
 <li class="nav-item {{ (Request::is('buku') || Request::is('buku/*') ? 'active open' : '') }}">
     <a class="nav-link" href="{{ route('buku') }}">
         <i class="fa-solid fa-book"></i>
         <span>Buku</span>
+    </a>
+</li>
+
+<li class="nav-item {{ (Request::is('catalog-siswa') || Request::is('catalog-siswa/*') ? 'active open' : '') }}">
+    <a class="nav-link" href="{{ route('catalog-siswa') }}">
+        <i class="fa-solid fa-table-list"></i>
+        <span>Daftar Katalog</span>
     </a>
 </li>
 

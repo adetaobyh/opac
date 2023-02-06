@@ -1,4 +1,4 @@
-@extends('admin.layout.app')
+@extends('siswa.layout.app')
 @section('title', 'Katalog')
 @section('content')
 
@@ -20,7 +20,7 @@
                             </a> -->
                         </div>
                         <div class="card-body">
-                            <form class="form row" method="get" action="{{ route('search-catalog-admin') }}">
+                            <form class="form row" method="get" action="{{ route('search-catalog-siswa') }}">
                                 <div class="col">
                                     <input type="text" name="view" class="form-control" id="view" placeholder="Masukkan Pencarian">
                                 </div>
@@ -28,7 +28,7 @@
                                     <button type="submit" class="btn btn-primary mb-3">Cari</button>
                                 </div>
                                 <div class="col-auto">
-                                    <a href="{{ route('catalog') }}" class="btn btn-danger btn-icon-split" type="button">
+                                    <a href="{{ route('catalog-siswa') }}" class="btn btn-danger btn-icon-split" type="button">
                                         <span class="text">Kembali</span>
                                     </a>
                                 </div>

@@ -23,6 +23,7 @@ return new class extends Migration
                 ->constrained()
                 ->onUpdate('cascade')
                 ->onDelete('cascade');
+            $table->integer('quantity');
             $table->date('booking_start');
             $table->date('booking_end');
             $table->date('extend_book')->nullable();

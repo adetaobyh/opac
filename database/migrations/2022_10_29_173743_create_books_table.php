@@ -26,9 +26,9 @@ return new class extends Migration
             $table->string('bk_title');
             $table->string('slug');
             // $table->string('bk_date');
-            // $table->string('bk_writer');
+            $table->string('bk_writer');
             // $table->string('synopsis');
-            // $table->string('publisher');
+            $table->string('publisher');
             $table->integer('bk_qty');
             $table->string('bk_location');
             $table->string('status');

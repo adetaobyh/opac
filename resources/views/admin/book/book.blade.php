@@ -56,11 +56,11 @@
                                         <td>{{ $dtBook->firstItem()+$loop->index }}</td>
                                         <td>{{ $book->catalogs->name_catalog }}</td>
                                         <td>{{ $book->bk_title }}</td>
-                                        <td>{{ $book->kelas->nm_kelas }}</td>
-                                        <!-- <td>{{ $book->bk_date }}</td>
                                         <td>{{ $book->bk_writer }}</td>
-                                        <td>{!! Str::limit($book->synopsis, 20) !!}</td>
-                                        <td>{{ $book->publisher }}</td> -->
+                                        <td>{{ $book->publisher }}</td>
+                                        <td>{{ $book->kelas->nm_kelas }}</td>
+                                        <!-- <td>{{ $book->bk_date }}</td> -->
+                                        <!-- <td>{!! Str::limit($book->synopsis, 20) !!}</td> -->
                                         <td>{{ $book->bk_location }}</td>
                                         <td>{{ $book->bk_qty }}</td>
                                         <td>{{ $book->status }}</td>

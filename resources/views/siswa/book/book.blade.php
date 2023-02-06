@@ -23,6 +23,11 @@
                                     <input type="text" name="view" class="form-control" id="view" placeholder="Masukkan Pencarian">
                                 </div>
                                 <div class="col-auto">
+                                    <a href="{{ route('buku') }}" class="btn btn-danger btn-icon-split" type="button">
+                                        <span class="text">Kembali</span>
+                                    </a>
+                                </div>
+                                <div class="col-auto">
                                     <button type="submit" class="btn btn-primary mb-3">Cari</button>
                                 </div>
                             </form>
