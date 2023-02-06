@@ -39,11 +39,11 @@
                                         <th scope="col">No.</th>
                                         <th scope="col">kategori</th>
                                         <th scope="col">Judul</th>
-                                        <th scope="col">Kelas</th>
-                                        <!-- <th scope="col">Tahun Terbit</th>
                                         <th scope="col">Penulis</th>
-                                        <th scope="col">Sinopsis</th>
-                                        <th scope="col">Penerbit</th> -->
+                                        <th scope="col">Penerbit</th>
+                                        <th scope="col">Kelas</th>
+                                        <!-- <th scope="col">Tahun Terbit</th> -->
+                                        <!-- <th scope="col">Sinopsis</th> -->
                                         <th scope="col">Lokasi</th>
                                         <th scope="col">Kuantitas</th>
                                         <th scope="col">Ketersediaan</th>
