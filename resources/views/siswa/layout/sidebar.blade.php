@@ -30,6 +30,13 @@
     </a>
 </li>
 
+<li class="nav-item {{ (Request::is('view-book') || Request::is('view-book/*') ? 'active open' : '') }}">
+    <a class="nav-link" href="{{ route('view-book') }}">
+        <i class="fa-solid fa-book-open"></i>
+        <span>Daftar Buku</span>
+    </a>
+</li>
+
 <li class="nav-item {{ (Request::is('booking-siswa') || Request::is('booking-siswa/*') ? 'active open' : '') }}">
     <a class="nav-link" href="{{ route('booking-siswa') }}">
         <i class="fa-solid fa-receipt"></i>

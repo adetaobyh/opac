@@ -37,6 +37,11 @@ class BukuSiswaController extends Controller
         return view('siswa.book.result', compact('dtResult'));
     }
 
+    public function viewBook()
+    {
+        $dtViewBk = book::simplePaginate(5);
+        return view('siswa.book.view-book', compact('dtViewBk'));
+    }
 
     public function detail($slug)
     {

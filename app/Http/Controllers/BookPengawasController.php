@@ -9,6 +9,7 @@ use Maatwebsite\Excel\Facades\Excel;
 use Auth;
 use App\Models\Book;
 use App\Models\Catalog;
+use App\Models\Kelas;
 
 class BookPengawasController extends Controller
 {
@@ -33,6 +34,6 @@ class BookPengawasController extends Controller
 
     public function export() 
     {
-        return Excel::download(new BookExport, 'Book.xlsx', \Maatwebsite\Excel\Excel::DOMPDF);
+        return Excel::download(new BookExport, 'Book.pdf', \Maatwebsite\Excel\Excel::DOMPDF);
     }
 }

@@ -115,6 +115,7 @@ Route::middleware(['auth', 'siswa', 'revalidate'])->group(function () {
     // Siswa Book
     Route::get('/buku', [BukuSiswaController::class, 'index'])->name('buku');
     Route::get('/cari-buku', [BukuSiswaController::class, 'search'])->name('search');
+    Route::get('/view-book', [BukuSiswaController::class, 'viewBook'])->name('view-book');
 
     // Siswa Booking
     Route::get('/booking-siswa', [BookingSiswaController::class, 'index'])->name('booking-siswa');
