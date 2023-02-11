@@ -16,10 +16,10 @@ class Kelas extends Model
     ];
 
     public function books(){
-        return $this->belongsTo(Book::class);
+        return $this->hasMany(Book::class);
     }
 
     public function users(){
-        return $this->belongsTo(User::class);
+        return $this->hasMany(User::class);
     }
 }

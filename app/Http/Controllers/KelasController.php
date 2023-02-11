@@ -86,10 +86,9 @@ class KelasController extends Controller
     public function update(Request $request, $id)
     {
         $dtKelas = Kelas::findOrFail($id);
-        $dtKelas = Kelas::update([
+        $dtKelas->update([
             'nm_kelas' => $request->nm_kelas
         ]);
-
         return redirect('kelas');
     }
 

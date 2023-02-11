@@ -96,12 +96,12 @@ Route::middleware(['auth', 'guru', 'revalidate'])->group(function () {
     // Pengawas Book
     Route::get('/book-pengawas', [BookPengawasController::class, 'index'])->name('book-pengawas');
     Route::get('/cari-buku-pengawas', [BookPengawasController::class, 'search'])->name('search-book-pengawas');
-    Route::get('/book/export/', [BookPengawasController::class, 'export'])->name('export-book-pengawas');
+    //Route::get('/book/export/', [BookPengawasController::class, 'export'])->name('export-book-pengawas');
 
     // Pengawas Booking
     Route::get('/booking-pengawas', [BookingPengawasController::class, 'index'])->name('booking-pengawas');
     Route::get('/cari-booking-pengawas', [BookingPengawasController::class, 'search'])->name('search-booking-pengawas');
-    Route::get('/booking/export/', [BookingPengawasController::class, 'export'])->name('export-booking-pengawas');
+    //Route::get('/booking/export/', [BookingPengawasController::class, 'export'])->name('export-booking-pengawas');
 
 });
 

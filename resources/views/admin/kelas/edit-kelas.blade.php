@@ -20,7 +20,7 @@
                             </h6>
                         </div>
                         <div class="card-body">
-                        <form action="{{ route('update-book',$dtKelas->id) }}" method="post" enctype="multipart/form-data">
+                        <form action="{{ route('update-kelas',$dtKelas->id) }}" method="post" enctype="multipart/form-data">
                             {{ csrf_field() }}
                             <div class="form-group">
                                 <label for="nm_kelas" class="form-label">Kelas</label>
